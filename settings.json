@@ -1,0 +1,36 @@
+{
+  "lastChangelogVersion": "0.73.0",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-sonnet-4-6",
+  "defaultThinkingLevel": "off",
+  "hideThinkingBlock": true,
+  "showHardwareCursor": false,
+  "followUpMode": "all",
+  "transport": "sse",
+  "quietStartup": false,
+  "doubleEscapeAction": "tree",
+  "treeFilterMode": "default",
+  "theme": "dark",
+  "enabledModels": [
+    "anthropic/claude-haiku-4-5",
+    "anthropic/claude-sonnet-4-6",
+    "anthropic/claude-opus-4-7",
+    "openai-codex/gpt-5.5"
+  ],
+  "autocompleteMaxVisible": 20,
+  "steeringMode": "one-at-a-time",
+  "packages": [
+  ],
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "warnings": {
+    "anthropicExtraUsage": false
+  },
+  "enableSkillCommands": true,
+  "collapseChangelog": true,
+  "skills": [
+  ],
+  "extensions": [
+  ]
+}
