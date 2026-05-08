@@ -25,6 +25,12 @@
       "extensions": [
         "+index.ts"
       ]
+    },
+    {
+      "source": "git:github.com/badlogic/pi-telegram",
+      "extensions": [
+        "-index.ts"
+      ]
     }
   ],
   "terminal": {
