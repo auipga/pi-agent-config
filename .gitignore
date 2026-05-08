@@ -31,3 +31,6 @@ __pycache__/
 Thumbs.db
 tmp/
 *.log
+
+# manual
+submodules/
