@@ -62,5 +62,6 @@
     "-skills/badlogic/pi-skills/youtube-transcript/SKILL.md"
   ],
   "extensions": [
+    "-extensions/gnome-system-theme.ts"
   ]
 }
