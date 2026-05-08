@@ -20,6 +20,12 @@
   "autocompleteMaxVisible": 20,
   "steeringMode": "one-at-a-time",
   "packages": [
+    {
+      "source": "git:github.com/MasuRii/pi-rtk-optimizer",
+      "extensions": [
+        "+index.ts"
+      ]
+    }
   ],
   "terminal": {
     "showTerminalProgress": true
