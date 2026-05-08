@@ -42,6 +42,14 @@
   "enableSkillCommands": true,
   "collapseChangelog": true,
   "skills": [
+    "-skills/badlogic/pi-skills/brave-search/SKILL.md",
+    "-skills/badlogic/pi-skills/browser-tools/SKILL.md",
+    "-skills/badlogic/pi-skills/gccli/SKILL.md",
+    "-skills/badlogic/pi-skills/gdcli/SKILL.md",
+    "-skills/badlogic/pi-skills/gmcli/SKILL.md",
+    "-skills/badlogic/pi-skills/transcribe/SKILL.md",
+    "-skills/badlogic/pi-skills/vscode/SKILL.md",
+    "-skills/badlogic/pi-skills/youtube-transcript/SKILL.md"
   ],
   "extensions": [
   ]
