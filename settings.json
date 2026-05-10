@@ -48,6 +48,10 @@
   "enableSkillCommands": true,
   "collapseChangelog": true,
   "skills": [
+    "-skills/amosblomqvist/orchestrator/SKILL.md",
+    "-skills/amosblomqvist/pdf-reader/SKILL.md",
+    "-skills/amosblomqvist/reddit/SKILL.md",
+    "-skills/amosblomqvist/stop-slop/SKILL.md",
     "-skills/badlogic/pi-skills/brave-search/SKILL.md",
     "-skills/badlogic/pi-skills/browser-tools/SKILL.md",
     "-skills/badlogic/pi-skills/gccli/SKILL.md",
