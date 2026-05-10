@@ -1,0 +1,1 @@
+/home/ai/.pi/agent/submodules/git/github.com/badlogic/pi-mono/packages/coding-agent/examples/extensions/tools.ts
