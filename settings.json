@@ -41,18 +41,18 @@
     {
       "source": "git:github.com/nicobailon/pi-subagents",
       "extensions": [
-        "-src/extension/index.ts"
+        "+src/extension/index.ts"
       ],
       "prompts": [
-        "-prompts/gather-context-and-clarify.md",
-        "-prompts/parallel-cleanup.md",
-        "-prompts/parallel-context-build.md",
-        "-prompts/parallel-handoff-plan.md",
-        "-prompts/parallel-research.md",
-        "-prompts/parallel-review.md"
+        "+prompts/gather-context-and-clarify.md",
+        "+prompts/parallel-cleanup.md",
+        "+prompts/parallel-context-build.md",
+        "+prompts/parallel-handoff-plan.md",
+        "+prompts/parallel-research.md",
+        "+prompts/parallel-review.md"
       ],
       "skills": [
-        "-skills/pi-subagents/SKILL.md"
+        "+skills/pi-subagents/SKILL.md"
       ]
     }
   ],
