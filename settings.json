@@ -101,7 +101,7 @@
     "+extensions/qna.ts",
     "+extensions/question.ts",
     "+extensions/questionnaire.ts",
-    "+extensions/sandbox/index.ts",
+    "-extensions/sandbox/index.ts",
     "+extensions/status-line.ts",
     "-extensions/subagent/index.ts",
     "+extensions/titlebar-spinner.ts",
