@@ -102,6 +102,15 @@
     "+extensions/todo.ts",
     "+extensions/tools.ts",
     "+extensions/trigger-compact.ts",
+
+    "+extensions/ask-user-question.ts",
+    "+extensions/bash-guard/index.ts",
+    "+extensions/filechanges/index.ts",
+    "+extensions/memory.ts",
+    "-extensions/subagents/index.ts",
+    "+extensions/web-fetch/index.ts",
+    "-extensions/web-search/index.ts",
+
     "-extensions/gnome-system-theme.ts"
   ]
 }
