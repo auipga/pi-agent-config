@@ -27,6 +27,12 @@
       ]
     },
     {
+      "source": "git:github.com/dheerapat/pi-token-stats",
+      "extensions": [
+        "+index.ts"
+      ]
+    },
+    {
       "source": "git:github.com/badlogic/pi-telegram",
       "extensions": [
         "-index.ts"
