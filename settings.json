@@ -37,6 +37,12 @@
       "extensions": [
         "-index.ts"
       ]
+    },
+    {
+      "source": "git:github.com/nicobailon/pi-subagents",
+      "extensions": [
+        "+src/extension/index.ts"
+      ]
     }
   ],
   "terminal": {
