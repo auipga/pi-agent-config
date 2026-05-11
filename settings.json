@@ -79,6 +79,31 @@
     "-skills/badlogic/pi-skills/youtube-transcript/SKILL.md"
   ],
   "extensions": [
+    "+extensions/bookmark.ts",
+    "+extensions/confirm-destructive.ts",
+    "+extensions/custom-compaction.ts",
+    "+extensions/custom-header.ts",
+    "+extensions/handoff.ts",
+    "+extensions/inline-bash.ts",
+    "+extensions/input-transform.ts",
+    "+extensions/interactive-shell.ts",
+    "+extensions/model-status.ts",
+    "+extensions/notify.ts",
+    "+extensions/permission-gate.ts",
+    "+extensions/plan-mode/index.ts",
+    "+extensions/preset.ts",
+    "+extensions/protected-paths.ts",
+    "+extensions/qna.ts",
+    "+extensions/question.ts",
+    "+extensions/questionnaire.ts",
+    "+extensions/session-name.ts",
+    "+extensions/sandbox/index.ts",
+    "+extensions/status-line.ts",
+    "+extensions/subagent/index.ts",
+    "+extensions/titlebar-spinner.ts",
+    "+extensions/todo.ts",
+    "+extensions/tools.ts",
+    "+extensions/trigger-compact.ts",
     "-extensions/gnome-system-theme.ts"
   ]
 }
