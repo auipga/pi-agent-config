@@ -3,7 +3,7 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
   "defaultThinkingLevel": "off",
-  "hideThinkingBlock": true,
+  "hideThinkingBlock": false,
   "showHardwareCursor": false,
   "followUpMode": "all",
   "transport": "sse",
