@@ -54,6 +54,12 @@
       "skills": [
         "+skills/pi-subagents/SKILL.md"
       ]
+    },
+    {
+      "source": "npm:pi-mono-usage",
+      "extensions": [
+        "+index.ts"
+      ]
     }
   ],
   "terminal": {
