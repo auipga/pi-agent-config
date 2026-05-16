@@ -92,7 +92,7 @@
     "+extensions/inline-bash.ts",
     "+extensions/input-transform.ts",
     "+extensions/interactive-shell.ts",
-    "+extensions/model-status.ts",
+    "-extensions/model-status.ts",
     "+extensions/notify.ts",
     "+extensions/permission-gate.ts",
     "+extensions/plan-mode/index.ts",
