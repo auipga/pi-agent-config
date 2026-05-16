@@ -9,7 +9,7 @@
   "transport": "sse",
   "quietStartup": false,
   "doubleEscapeAction": "tree",
-  "treeFilterMode": "default",
+  "treeFilterMode": "all",
   "theme": "catppuccin-mocha",
   "enabledModels": [
     "anthropic/claude-haiku-4-5",
