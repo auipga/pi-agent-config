@@ -1,0 +1,22 @@
+{
+  "fast": {
+    "provider": "openai-codex",
+    "model": "gpt-5.5",
+    "thinkingLevel": "off"
+  },
+  "code": {
+    "provider": "anthropic",
+    "model": "claude-opus-4-7",
+    "thinkingLevel": "off"
+  },
+  "deep": {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-6",
+    "thinkingLevel": "high"
+  },
+  "cheap": {
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5",
+    "thinkingLevel": "off"
+  }
+}
