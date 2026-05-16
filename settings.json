@@ -10,7 +10,7 @@
   "quietStartup": false,
   "doubleEscapeAction": "tree",
   "treeFilterMode": "default",
-  "theme": "dark",
+  "theme": "catppuccin-mocha",
   "enabledModels": [
     "anthropic/claude-haiku-4-5",
     "anthropic/claude-sonnet-4-6",
