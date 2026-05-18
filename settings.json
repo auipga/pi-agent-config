@@ -73,6 +73,7 @@
   "enableSkillCommands": true,
   "collapseChangelog": true,
   "skills": [
+    "+skills/me/rtfm/SKILL.md",
     "-skills/amosblomqvist/orchestrator/SKILL.md",
     "-skills/amosblomqvist/pdf-reader/SKILL.md",
     "-skills/amosblomqvist/reddit/SKILL.md",
