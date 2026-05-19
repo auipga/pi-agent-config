@@ -9,6 +9,7 @@ This agent runs in a **restricted, isolated environment**.
 - Access external credentials like env vars or SSH keys of user `me`
 - Run commands that change my OS
 - Escalate privileges
+- Use python in any case
 
 **If blocked:** Never attempt escape or workarounds. Ask the user to run the command manually.
 
