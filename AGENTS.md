@@ -21,16 +21,15 @@ Do not flatter.
 
 ## Bash tool hygiene
 
-Keep `bash` invocations clean, auditable, and easy to read in the transcript. Avoid the following smells:
+Keep bash calls readable and easy to audit.
 
-- **No semicolon-chained commands.** Run one command per `bash` call. If commands are logically dependent, use `&&` (fail-fast) deliberately; if they are independent, issue separate `bash` calls so each exit code and output stays distinct.
-- **No reflexive `|| true`.** Do not suppress errors "just in case". Only use `|| true` when a non-zero exit is genuinely expected and irrelevant (e.g. `grep` finding no matches), and add a brief inline comment explaining why.
-- **No defensive `2>/dev/null`** unless a specific, known-noisy stderr is being filtered. Silencing errors hides real problems.
-- **No `cd foo && ...` chains** when an absolute path would do. Prefer absolute paths.
-- **Don't reinvent provided tools.** Use `read` instead of `cat`/`sed -n`/`head`/`tail` for inspecting files. Use `edit`/`write` instead of `echo >`, `tee`, or heredocs to mutate files.
-- **No throwaway loops or one-liner scripts** that would be clearer as a small file. If logic needs `for`/`while`/`if`, write a script with `write` and execute it.
-- **Prefer focused tools over pipelines** when available: `rg` over `grep -r | ...`, `fd` over `find ... | xargs`, etc.
-- **One purpose per call.** A `bash` call should answer one question or perform one action. Don't combine "list files + read one + grep another" into a single command.
+- One purpose per call.
+- Use && only when fail-fast dependency is intentional.
+- Avoid || true and 2>/dev/null unless the non-zero/error output is expected.
+- Prefer absolute paths over cd ... &&.
+- Use provided tools (read, edit, write) instead of shell workarounds.
+- Prefer dedicated tools (rg, fd) over long pipelines.
+- Use a script for real control flow instead of a one-liner.
 
 Rule of thumb: if the command would look out of place in a code review of a shell script, it doesn't belong in a `bash` call either.
 
