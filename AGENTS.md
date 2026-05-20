@@ -7,7 +7,7 @@ This agent runs in a **restricted, isolated environment**.
 ### You CANNOT
 
 - Access external credentials like env vars or SSH keys of user `me`
-- Run commands that change my OS
+- Run commands that change my OS like installing packages.
 - Escalate privileges
 - Use python in any case
 
@@ -33,3 +33,7 @@ Keep `bash` invocations clean, auditable, and easy to read in the transcript. Av
 - **One purpose per call.** A `bash` call should answer one question or perform one action. Don't combine "list files + read one + grep another" into a single command.
 
 Rule of thumb: if the command would look out of place in a code review of a shell script, it doesn't belong in a `bash` call either.
+
+## Special Instructions
+
+- Before each bash tool invocation, briefly state what it's for and the expected high-level result, so I can read it fast.
