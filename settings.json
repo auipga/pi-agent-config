@@ -63,6 +63,7 @@
         "+index.ts"
       ]
     },
+    "npm:@heyhuynhgiabuu/pi-diff",
     "git:github.com/nicobailon/pi-intercom"
   ],
   "terminal": {
