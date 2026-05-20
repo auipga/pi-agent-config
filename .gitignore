@@ -15,6 +15,9 @@ run-history.jsonl
 session-manager-config.toml
 pi-crash.log
 
+# Extension runtime state
+intercom/
+
 # Dependencies / generated environments
 node_modules/
 **/node_modules/
