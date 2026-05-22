@@ -59,13 +59,21 @@
       ]
     },
     {
+      "source": "git:github.com/nicobailon/pi-intercom",
+      "extensions": [
+        "+index.ts"
+      ],
+      "skills": [
+        "+skills/pi-intercom/SKILL.md"
+      ]
+    },
+    {
       "source": "npm:pi-mono-usage",
       "extensions": [
         "-index.ts"
       ]
     },
-    "npm:@heyhuynhgiabuu/pi-diff",
-    "git:github.com/nicobailon/pi-intercom"
+    "npm:@heyhuynhgiabuu/pi-diff"
   ],
   "terminal": {
     "showTerminalProgress": true
