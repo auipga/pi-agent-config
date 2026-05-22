@@ -73,7 +73,15 @@
         "-index.ts"
       ]
     },
-    "npm:@heyhuynhgiabuu/pi-diff"
+    {
+      "source": "npm:@heyhuynhgiabuu/pi-diff",
+      "extensions": [
+        "-dist/index.js"
+      ],
+      "prompts": [
+        "-prompts/review-diff-agent.md"
+      ]
+    }
   ],
   "terminal": {
     "showTerminalProgress": true
