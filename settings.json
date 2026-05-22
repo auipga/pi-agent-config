@@ -74,6 +74,12 @@
       ]
     },
     {
+      "source": "git:github.com/MasuRii/pi-tool-display",
+      "extensions": [
+        "+index.ts"
+      ]
+    },
+    {
       "source": "npm:@heyhuynhgiabuu/pi-diff",
       "extensions": [
         "-dist/index.js"
