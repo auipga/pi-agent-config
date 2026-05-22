@@ -26,7 +26,6 @@ Keep bash calls readable and easy to audit.
 - One purpose per call.
 - Use && only when fail-fast dependency is intentional.
 - Avoid || true and 2>/dev/null unless the non-zero/error output is expected.
-- Prefer absolute paths over cd ... &&.
 - Use provided tools (read, edit, write) instead of shell workarounds.
 - Prefer dedicated tools (rg, fd) over long pipelines.
 - Use a script for real control flow instead of a one-liner.
