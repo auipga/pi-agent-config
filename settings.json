@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.75.3",
+  "lastChangelogVersion": "0.75.4",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.4",
   "defaultThinkingLevel": "off",
@@ -37,7 +37,7 @@
     {
       "source": "git:github.com/badlogic/pi-telegram",
       "extensions": [
-        "-index.ts"
+        "+index.ts"
       ]
     },
     {
@@ -46,12 +46,13 @@
         "+src/extension/index.ts"
       ],
       "prompts": [
-        "+prompts/gather-context-and-clarify.md",
-        "+prompts/parallel-cleanup.md",
-        "+prompts/parallel-context-build.md",
-        "+prompts/parallel-handoff-plan.md",
-        "+prompts/parallel-research.md",
-        "+prompts/parallel-review.md"
+        "-prompts/gather-context-and-clarify.md",
+        "-prompts/parallel-cleanup.md",
+        "-prompts/parallel-context-build.md",
+        "-prompts/parallel-handoff-plan.md",
+        "-prompts/parallel-research.md",
+        "-prompts/parallel-review.md",
+        "-prompts/review-loop.md"
       ],
       "skills": [
         "+skills/pi-subagents/SKILL.md"
@@ -60,7 +61,7 @@
     {
       "source": "npm:pi-mono-usage",
       "extensions": [
-        "+index.ts"
+        "-index.ts"
       ]
     },
     "npm:@heyhuynhgiabuu/pi-diff",
@@ -90,15 +91,15 @@
     "-skills/badlogic/pi-skills/youtube-transcript/SKILL.md"
   ],
   "extensions": [
-    "+extensions/bookmark.ts",
+    "-extensions/bookmark.ts",
     "-extensions/custom-compaction.ts",
     "-extensions/custom-header.ts",
-    "+extensions/handoff.ts",
-    "+extensions/inline-bash.ts",
-    "+extensions/input-transform.ts",
-    "+extensions/interactive-shell.ts",
+    "-extensions/handoff.ts",
+    "-extensions/inline-bash.ts",
+    "-extensions/input-transform.ts",
+    "-extensions/interactive-shell.ts",
     "-extensions/model-status.ts",
-    "+extensions/notify.ts",
+    "-extensions/notify.ts",
     "+extensions/permission-gate.ts",
     "-extensions/plan-mode/index.ts",
     "+extensions/preset.ts",
@@ -107,10 +108,10 @@
     "+extensions/question.ts",
     "+extensions/questionnaire.ts",
     "-extensions/sandbox/index.ts",
-    "+extensions/status-line.ts",
+    "-extensions/status-line.ts",
     "-extensions/subagent/index.ts",
     "+extensions/titlebar-spinner.ts",
-    "+extensions/todo.ts",
+    "-extensions/todo.ts",
     "+extensions/tools.ts",
     "-extensions/trigger-compact.ts",
     "+extensions/ask-user-question.ts",
