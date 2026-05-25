@@ -1,1 +1,1 @@
-/home/ai/.pi/agent/submodules/git/github.com/badlogic/pi-mono/packages/coding-agent/examples/extensions/session-name.ts
+/home/ai/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/session-name.ts

@@ -1,1 +1,1 @@
-/home/ai/.pi/agent/submodules/git/github.com/badlogic/pi-mono/packages/coding-agent/examples/extensions/model-status.ts
+/home/ai/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/model-status.ts
