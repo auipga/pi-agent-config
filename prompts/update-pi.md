@@ -1,4 +1,6 @@
-# Update Pi Coding Agent
+---
+description: Update Pi Coding Agent
+---
 
 Source: ~/git/earendil-works/pi-mono/
 `cd` into the folder.
@@ -19,4 +21,4 @@ Run `npm run build`.
 Handle uncommitted changes by stashing.
 Skip git hooks.
 Ignore the non-error output of all commands.
-If anything fails, ask how to handle (you provide suggestions).
+Ask me how to handle failures. Provide multiple suggestions to choose from.
