@@ -40,7 +40,7 @@
     {
       "source": "git:github.com/nicobailon/pi-subagents",
       "extensions": [
-        "+src/extension/index.ts"
+        "-src/extension/index.ts"
       ],
       "prompts": [
         "-prompts/gather-context-and-clarify.md",
@@ -52,16 +52,16 @@
         "-prompts/review-loop.md"
       ],
       "skills": [
-        "+skills/pi-subagents/SKILL.md"
+        "-skills/pi-subagents/SKILL.md"
       ]
     },
     {
       "source": "git:github.com/nicobailon/pi-intercom",
       "extensions": [
-        "+index.ts"
+        "-index.ts"
       ],
       "skills": [
-        "+skills/pi-intercom/SKILL.md"
+        "-skills/pi-intercom/SKILL.md"
       ]
     },
     {
@@ -83,6 +83,12 @@
       ],
       "prompts": [
         "-prompts/review-diff-agent.md"
+      ]
+    },
+    {
+      "source": "npm:@gotgenes/pi-subagents",
+      "extensions": [
+        "+src/index.ts"
       ]
     }
   ],
