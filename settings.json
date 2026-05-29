@@ -96,6 +96,12 @@
       "extensions": [
         "+src/index.ts"
       ]
+    },
+    {
+      "source": "npm:@juicesharp/rpiv-ask-user-question",
+      "extensions": [
+        "+index.ts"
+      ]
     }
   ],
   "terminal": {
@@ -136,8 +142,8 @@
     "+extensions/preset.ts",
     "-extensions/protected-paths.ts",
     "+extensions/qna.ts",
-    "+extensions/question.ts",
-    "+extensions/questionnaire.ts",
+    "-extensions/question.ts",
+    "-extensions/questionnaire.ts",
     "-extensions/sandbox/index.ts",
     "-extensions/status-line.ts",
     "-extensions/subagent/index.ts",
@@ -145,7 +151,7 @@
     "-extensions/todo.ts",
     "+extensions/tools.ts",
     "-extensions/trigger-compact.ts",
-    "+extensions/ask-user-question.ts",
+    "-extensions/ask-user-question.ts",
     "-extensions/bash-guard/index.ts",
     "+extensions/filechanges/index.ts",
     "+extensions/memory.ts",
