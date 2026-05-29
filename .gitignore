@@ -17,6 +17,7 @@ pi-crash.log
 
 # Extension runtime state
 intercom/
+extensions/pi-permission-system/logs/
 
 # Dependencies / generated environments
 node_modules/

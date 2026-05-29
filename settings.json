@@ -86,6 +86,12 @@
       ]
     },
     {
+      "source": "npm:@gotgenes/pi-permission-system",
+      "extensions": [
+        "+src/index.ts"
+      ]
+    },
+    {
       "source": "npm:@gotgenes/pi-subagents",
       "extensions": [
         "+src/index.ts"
@@ -125,10 +131,10 @@
     "-extensions/interactive-shell.ts",
     "-extensions/model-status.ts",
     "-extensions/notify.ts",
-    "+extensions/permission-gate.ts",
+    "-extensions/permission-gate.ts",
     "-extensions/plan-mode/index.ts",
     "+extensions/preset.ts",
-    "+extensions/protected-paths.ts",
+    "-extensions/protected-paths.ts",
     "+extensions/qna.ts",
     "+extensions/question.ts",
     "+extensions/questionnaire.ts",
