@@ -67,7 +67,7 @@
     {
       "source": "npm:pi-mono-usage",
       "extensions": [
-        "-index.ts"
+        "+index.ts"
       ]
     },
     {
