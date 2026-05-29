@@ -149,7 +149,7 @@
     "-extensions/subagent/index.ts",
     "+extensions/titlebar-spinner.ts",
     "-extensions/todo.ts",
-    "+extensions/tools.ts",
+    "-extensions/tools.ts",
     "-extensions/trigger-compact.ts",
     "-extensions/ask-user-question.ts",
     "-extensions/bash-guard/index.ts",
