@@ -10,7 +10,7 @@
   "quietStartup": false,
   "doubleEscapeAction": "tree",
   "treeFilterMode": "all",
-  "theme": "dark",
+  "theme": "light/dark",
   "enabledModels": [
     "openai-codex/gpt-5.4-mini",
     "openai-codex/gpt-5.4",
