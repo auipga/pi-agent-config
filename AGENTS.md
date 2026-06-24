@@ -1,17 +1,8 @@
 # Global Agent Guidelines
 
-## Isolation & Security
+## You CANNOT
 
-This agent runs in a **restricted, isolated environment**.
-
-### You CANNOT
-
-- Access external credentials like env vars or SSH keys of user `me`
-- Run commands that change my OS like installing packages.
-- Escalate privileges
 - Use python in any case
-
-**If blocked:** Never attempt escape or workarounds. Ask the user to run the command manually.
 
 ## About the user
 
