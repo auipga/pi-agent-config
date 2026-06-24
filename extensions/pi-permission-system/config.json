@@ -10,7 +10,7 @@
       "~/.ssh/*": "deny"
     },
     "write": {
-      "*": "allow",
+      "*": "ask",
       "*.lock": "deny"
     },
     "bash": {
