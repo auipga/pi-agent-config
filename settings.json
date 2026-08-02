@@ -1,6 +1,6 @@
 {
   "lastChangelogVersion": "0.80.2",
-  "defaultProvider": "openai-codex",
+  "defaultProvider": "openai",
   "defaultModel": "gpt-5.4-mini",
   "defaultThinkingLevel": "off",
   "hideThinkingBlock": false,
@@ -12,6 +12,9 @@
   "treeFilterMode": "all",
   "theme": "light/dark",
   "enabledModels": [
+    "openai/gpt-5.4-mini",
+    "openai/gpt-5.4",
+    "openai/gpt-5.5",
     "openai-codex/gpt-5.4-mini",
     "openai-codex/gpt-5.4",
     "openai-codex/gpt-5.5",
