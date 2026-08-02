@@ -3,6 +3,7 @@ auth.json
 **/auth.json
 .env
 .env.*
+models-store.json
 telegram.json
 trust.json
 
