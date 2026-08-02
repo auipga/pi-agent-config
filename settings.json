@@ -112,7 +112,8 @@
       "extensions": [
         "+index.ts"
       ]
-    }
+    },
+    "npm:pi-wakatime"
   ],
   "terminal": {
     "showTerminalProgress": true
