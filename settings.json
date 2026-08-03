@@ -143,6 +143,8 @@
     "-skills/badlogic/transcribe/SKILL.md",
     "-skills/badlogic/vscode/SKILL.md",
     "-skills/badlogic/youtube-transcript/SKILL.md",
+    "+skills/benithors/brainstorm/SKILL.md",
+    "+skills/benithors/grill-me/SKILL.md",
     "+skills/me/rtfm/SKILL.md"
   ],
   "extensions": [
