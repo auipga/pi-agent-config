@@ -143,7 +143,11 @@
     "-skills/badlogic/transcribe/SKILL.md",
     "-skills/badlogic/vscode/SKILL.md",
     "-skills/badlogic/youtube-transcript/SKILL.md",
+    "-skills/benithors/agent-browser/SKILL.md",
+    "-skills/benithors/autoreview/SKILL.md",
     "+skills/benithors/brainstorm/SKILL.md",
+    "-skills/benithors/create-cli/SKILL.md",
+    "-skills/benithors/frontend-design/SKILL.md",
     "+skills/benithors/grill-me/SKILL.md",
     "+skills/me/rtfm/SKILL.md"
   ],
@@ -184,6 +188,7 @@
     "-themes/catppuccin-mocha.json"
   ],
   "prompts": [
+    "-prompts/security-audit.md",
     "+prompts/update-pi.md"
   ]
 }
