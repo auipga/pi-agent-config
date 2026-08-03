@@ -1,1 +1,1 @@
-/home/ai/.pi/agent/submodules/git/github.com/amosblomqvist/pi-config/extensions/memory.ts
+../../../amosblomqvist/pi-config/extensions/memory.ts

@@ -1,1 +1,1 @@
-/home/ai/.pi/agent/submodules/git/github.com/amosblomqvist/pi-config/extensions/ask-user-question.ts
+../../../amosblomqvist/pi-config/extensions/ask-user-question.ts
