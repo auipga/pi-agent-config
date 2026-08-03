@@ -57,7 +57,7 @@
     {
       "source": "git:github.com/nicobailon/pi-subagents",
       "extensions": [
-        "-src/extension/index.ts"
+        "-index.ts"
       ],
       "prompts": [
         "-prompts/gather-context-and-clarify.md",
