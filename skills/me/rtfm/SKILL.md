@@ -1,6 +1,6 @@
 ---
 name: rtfm
-description: Finds and reads relevant local documentation for APIs, packages, crates, frameworks, CLIs, and databases before answering. Use when the user asks about docs, current API behavior, framework/library usage, or invokes /skill:rtfm.
+description: Finds and reads relevant local documentation for APIs, packages, crates, frameworks, CLIs, and databases before answering. Use when the user asks about docs, current API behavior, framework/library usage.
 ---
 
 # RTFM
@@ -17,10 +17,11 @@ Use this skill to ground answers in local, version-relevant documentation instea
 6. If subagents are available and the search space is broad, delegate a fresh-context scout/research task whose only output is a ranked list of relevant files with one-line reasons.
 7. In the main session, read only the selected relevant files before answering.
 8. Answer briefly and cite the file paths read when useful.
-9. If relevant docs are not installed or not found, say so explicitly and state the fallback used.
+9. If relevant docs are not installed or not found, say so explicitly and ask me which fallback should be used. Rank options by suggestability.
 
 ## Source Discovery
 
+if your internal memory is not in exact sync with the versions in use here. 60G
 ### Node / TypeScript projects
 
 1. Inspect `package.json`, lockfiles, and workspace config.
@@ -31,7 +32,6 @@ Use this skill to ground answers in local, version-relevant documentation instea
    - `node_modules/<pkg>/package.json`
    - `node_modules/<pkg>/**/*.d.ts`
 3. For scoped packages, preserve the scope path, e.g. `node_modules/@scope/name`.
-4. If the package is not installed, say so; do not invent docs.
 
 ### Rust projects
 
@@ -41,7 +41,6 @@ Use this skill to ground answers in local, version-relevant documentation instea
    - vendored crates under `vendor/` or similar
    - Cargo registry sources, usually `~/.cargo/registry/src/**/<crate>-<version>/`
 3. Read crate `README*`, `CHANGELOG*`, `examples/**`, `src/**/*.rs`, and rustdoc comments relevant to the question.
-4. Prefer the version from `Cargo.lock` when available.
 
 ### Python projects
 
