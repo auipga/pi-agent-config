@@ -131,7 +131,6 @@
   "enableSkillCommands": true,
   "collapseChangelog": true,
   "skills": [
-    "+skills/me/rtfm/SKILL.md",
     "-skills/amosblomqvist/orchestrator/SKILL.md",
     "-skills/amosblomqvist/pdf-reader/SKILL.md",
     "-skills/amosblomqvist/reddit/SKILL.md",
@@ -143,7 +142,8 @@
     "-skills/badlogic/pi-skills/gmcli/SKILL.md",
     "-skills/badlogic/pi-skills/transcribe/SKILL.md",
     "-skills/badlogic/pi-skills/vscode/SKILL.md",
-    "-skills/badlogic/pi-skills/youtube-transcript/SKILL.md"
+    "-skills/badlogic/pi-skills/youtube-transcript/SKILL.md",
+    "+skills/me/rtfm/SKILL.md"
   ],
   "extensions": [
     "-extensions/bookmark.ts",
