@@ -182,6 +182,7 @@
     "-extensions/subagents/index.ts",
     "+extensions/web-fetch/index.ts",
     "-extensions/web-search/index.ts",
+    "+extensions/at-file-context-guard.ts",
     "-extensions/gnome-system-theme.ts"
   ],
   "themes": [
