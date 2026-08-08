@@ -130,6 +130,9 @@
   },
   "enableSkillCommands": true,
   "collapseChangelog": true,
+  "showCacheMissNotices": true,
+  "enableInstallTelemetry": false,
+  "defaultProjectTrust": "ask",
   "skills": [
     "-../../git/amosblomqvist/pi-config/skills/orchestrator/SKILL.md",
     "-../../git/amosblomqvist/pi-config/skills/pdf-reader/SKILL.md",
