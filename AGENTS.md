@@ -26,3 +26,17 @@ Rule of thumb: if the command would look out of place in a code review of a shel
 ## Special Instructions
 
 - Before each bash tool invocation, briefly state what it's for and the expected high-level result, so I can read it fast.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked as local markdown files under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Triage uses the default five canonical role labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Domain documentation uses a single-context layout. See `docs/agents/domain.md`.
