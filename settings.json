@@ -179,6 +179,8 @@
   "showCacheMissNotices": true,
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "ask",
+  "tuiMode": "fullscreen",
+  "fullscreenScrollbar": "auto",
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias -- ' ~/.zshrc)\"",
   "skills": [
     "-../../git/amosblomqvist/pi-config/skills/orchestrator/SKILL.md",
