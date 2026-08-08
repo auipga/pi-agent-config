@@ -1,1 +1,0 @@
-../../../benithors/skills/prompts/security-audit.md
