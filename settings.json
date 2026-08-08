@@ -228,6 +228,7 @@
     "-../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/trigger-compact.ts",
     "-../../git/amosblomqvist/pi-config/extensions/ask-user-question.ts",
     "-../../git/amosblomqvist/pi-config/extensions/bash-guard/index.ts",
+    "../../git/amosblomqvist/pi-config/extensions/context.ts",
     "../../git/amosblomqvist/pi-config/extensions/filechanges/index.ts",
     "../../git/amosblomqvist/pi-config/extensions/memory.ts",
     "-../../git/amosblomqvist/pi-config/extensions/subagents/index.ts",
