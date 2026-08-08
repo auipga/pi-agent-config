@@ -1,1 +1,1 @@
-/home/ai/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/dirty-repo-guard.ts
+../../../../earendil-works/pi-mono/packages/coding-agent/examples/extensions/dirty-repo-guard.ts

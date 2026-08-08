@@ -1,1 +1,1 @@
-/home/ai/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/auto-commit-on-exit.ts
+../../../../earendil-works/pi-mono/packages/coding-agent/examples/extensions/auto-commit-on-exit.ts

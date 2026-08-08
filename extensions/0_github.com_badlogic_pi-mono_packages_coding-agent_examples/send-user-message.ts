@@ -1,1 +1,1 @@
-/home/ai/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/send-user-message.ts
+../../../../earendil-works/pi-mono/packages/coding-agent/examples/extensions/send-user-message.ts

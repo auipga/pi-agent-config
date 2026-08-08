@@ -1,1 +1,1 @@
-/home/ai/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/structured-output.ts
+../../../../earendil-works/pi-mono/packages/coding-agent/examples/extensions/structured-output.ts

@@ -1,1 +1,1 @@
-/home/ai/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/tic-tac-toe.ts
+../../../../earendil-works/pi-mono/packages/coding-agent/examples/extensions/tic-tac-toe.ts
