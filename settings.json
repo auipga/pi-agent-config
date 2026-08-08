@@ -143,12 +143,12 @@
     "-../../git/badlogic/pi-skills/transcribe/SKILL.md",
     "-../../git/badlogic/pi-skills/vscode/SKILL.md",
     "-../../git/badlogic/pi-skills/youtube-transcript/SKILL.md",
-    "-skills/benithors/agent-browser/SKILL.md",
-    "-skills/benithors/autoreview/SKILL.md",
-    "+skills/benithors/brainstorm/SKILL.md",
-    "-skills/benithors/create-cli/SKILL.md",
-    "-skills/benithors/frontend-design/SKILL.md",
-    "-skills/benithors/grill-me/SKILL.md",
+    "-../../git/benithors/skills/skills/agent-browser/SKILL.md",
+    "-../../git/benithors/skills/skills/autoreview/SKILL.md",
+    "../../git/benithors/skills/skills/brainstorm/SKILL.md",
+    "-../../git/benithors/skills/skills/create-cli/SKILL.md",
+    "-../../git/benithors/skills/skills/frontend-design/SKILL.md",
+    "-../../git/benithors/skills/skills/grill-me/SKILL.md",
     "../../git/tmustier/pi-extensions/extending-pi/SKILL.md",
     "../../git/tmustier/pi-extensions/extending-pi/skill-creator/SKILL.md",
     "-skills/me/rtfm/SKILL.md"
@@ -197,7 +197,7 @@
     "-themes/catppuccin-mocha.json"
   ],
   "prompts": [
-    "-prompts/security-audit.md",
+    "-../../git/benithors/skills/prompts/security-audit.md",
     "+prompts/update-pi.md"
   ]
 }
