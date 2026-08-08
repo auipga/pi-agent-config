@@ -148,7 +148,7 @@
     "+skills/benithors/brainstorm/SKILL.md",
     "-skills/benithors/create-cli/SKILL.md",
     "-skills/benithors/frontend-design/SKILL.md",
-    "+skills/benithors/grill-me/SKILL.md",
+    "-skills/benithors/grill-me/SKILL.md",
     "+skills/me/rtfm/SKILL.md"
   ],
   "extensions": [
