@@ -149,6 +149,8 @@
     "-skills/benithors/create-cli/SKILL.md",
     "-skills/benithors/frontend-design/SKILL.md",
     "-skills/benithors/grill-me/SKILL.md",
+    "../../git/tmustier/pi-extensions/extending-pi/SKILL.md",
+    "../../git/tmustier/pi-extensions/extending-pi/skill-creator/SKILL.md",
     "-skills/me/rtfm/SKILL.md"
   ],
   "extensions": [
@@ -182,6 +184,12 @@
     "-extensions/subagents/index.ts",
     "+extensions/web-fetch/index.ts",
     "-extensions/web-search/index.ts",
+    "../../git/tmustier/pi-extensions/files-widget/index.ts",
+    "../../git/tmustier/pi-extensions/tab-status/tab-status.ts",
+    "../../git/tmustier/pi-extensions/usage-extension/index.ts",
+    "../../git/tmustier/pi-extensions/raw-paste/index.ts",
+    "../../git/tmustier/pi-extensions/code-actions/index.ts",
+    "../../git/tmustier/pi-extensions/session-recap/index.ts",
     "+extensions/at-file-context-guard.ts",
     "-extensions/gnome-system-theme.ts"
   ],
