@@ -41,16 +41,3 @@ To run this configuration:
 
 *) mono repo with more extensions than I use.
 
-## Notes about symlinks / how I unclutter `pi config`
-
-Some repositories include extensions/skills/prompts I'll never use and I don't want them ever to show up in `pi config` or bloat [settings.json](settings.json). Therefore I don't use `pi install ...` but symlink each single folder that I consider using. Examples:
-
-- from `~/.pi/agent/skills/benithors/grill-me`
-  to  `~/git/benithors/skills/skills/grill-me`
-- from                                               `~/.pi/agent/extensions/interactive-shell.ts`
-  to `~/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/interactive-shell.ts`
-
-I can't use regular symlinks without knowing your username, so I chose relative symlinks.
-TODO: add commit hashes to "use relative symlinks to sideloaded ..."
-
-Another benefit is that (if you read someone else's code before running on your machine), you do not have to check whether I have tampered with the original author's code.
