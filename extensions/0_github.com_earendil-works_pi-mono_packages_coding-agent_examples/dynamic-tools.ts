@@ -1,1 +1,0 @@
-../../../../earendil-works/pi-mono/packages/coding-agent/examples/extensions/dynamic-tools.ts

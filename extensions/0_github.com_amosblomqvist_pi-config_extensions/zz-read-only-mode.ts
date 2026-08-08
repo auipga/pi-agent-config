@@ -1,1 +1,0 @@
-../../../../amosblomqvist/pi-config/extensions/zz-read-only-mode.ts
