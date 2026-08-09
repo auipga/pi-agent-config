@@ -3,9 +3,6 @@ auth.json
 **/auth.json
 .env
 .env.*
-models-store.json
-telegram.json
-trust.json
 
 # Pi runtime state (created when this repo is used as ~/.pi/agent)
 .pi/
@@ -13,13 +10,16 @@ sessions/
 git/
 mcp-cache.json
 mcp-npx-cache.json
+models-store.json
 run-history.jsonl
-session-manager-config.toml
 pi-crash.log
+session-manager-config.toml
+trust.json
 
 # Extension runtime state
 intercom/
 extensions/pi-permission-system/logs/
+telegram.json
 
 # Dependencies / generated environments
 node_modules/
