@@ -14,6 +14,7 @@
       "*.lock": "deny"
     },
     "bash": {
+      "*": "ask",
       "rm -rf *": "deny",
       "sudo *": "ask"
     },
