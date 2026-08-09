@@ -15,7 +15,7 @@
     },
     "bash": {
       "rm -rf *": "deny",
-      "sudo *": "deny"
+      "sudo *": "ask"
     },
     "external_directory": "ask"
   }
