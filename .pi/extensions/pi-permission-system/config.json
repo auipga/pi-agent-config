@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/gotgenes/pi-permission-system/main/schemas/permissions.schema.json",
+  "permission": {
+    "path": {
+      "*": "allow",
+      "auth.json": "deny",
+      "sessions/*": "deny"
+    },
+    "write": {
+      "*": "allow",
+      ".pi/*": "ask",
+      "git/*": "deny",
+      "npm/*": "deny",
+      "sessions/*": "deny"
+    }
+  }
+}
