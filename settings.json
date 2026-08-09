@@ -203,7 +203,7 @@
     "-../../git/benithors/skills/skills/grill-me/SKILL.md",
     "../../git/tmustier/pi-extensions/extending-pi/SKILL.md",
     "../../git/tmustier/pi-extensions/extending-pi/skill-creator/SKILL.md",
-    "-skills/me/rtfm/SKILL.md"
+    "-skills/rtfm/SKILL.md"
   ],
   "extensions": [
     "-../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/bookmark.ts",
