@@ -179,7 +179,7 @@
   "showCacheMissNotices": true,
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "ask",
-  "tuiMode": "fullscreen",
+  "tuiMode": "regular",
   "fullscreenScrollbar": "auto",
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias -- ' ~/.zshrc)\"",
   "skills": [
