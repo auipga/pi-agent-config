@@ -20,6 +20,7 @@ trust.json
 intercom/
 extensions/pi-permission-system/logs/
 telegram.json
+usage-extension-cache.json
 
 # Dependencies / generated environments
 node_modules/
