@@ -9,13 +9,13 @@ This document is for future agents working in the repo. Use the vocabulary here 
 
 ## Glossary
 
-- **Configuration repo**: this repository as a whole; the source of the Pi setup.
+- **Configuration repo**: this repository as a whole; the source of the user's Pi setup.
 - **Extension**: a Pi extension under `extensions/`.
 - **Skill**: an agent skill under `skills/`.
 - **Prompt**: a reusable prompt template under `prompts/`.
 - **Theme**: a Pi theme file under `themes/`.
 - **Domain docs**: documentation under `docs/`, especially `docs/agents/`.
-- **Update prompt**: the `prompts/update-pi.md` workflow for refreshing the upstream Pi sources.
+- **Update pi**: the `prompts/update-pi.md` workflow for refreshing the upstream Pi sources.
 
 Avoid inventing alternate names for these concepts unless the repo already uses them.
 
@@ -25,36 +25,32 @@ Top-level layout:
 
 - `README.md`: short project summary and installation notes.
 - `CONTEXT.md`: this file; the canonical local guide for agents.
-- `extensions/`: custom and vendored Pi extensions.
+- `extensions/`: custom extensions and config files of vendored extensions.
   - `at-file-context-guard.ts`
-  - `date.ts`
-  - `gnome-system-theme.ts`
-  - `pi-permission-system/`
-  - `pi-rtk-optimizer/`
-  - `pi-tool-display/`
-- `prompts/`: prompt templates.
-  - `update-pi.md`
-- `skills/`: bundled skills.
+  - `date.ts` sends the current date as user message by `/date`.
+  - `gnome-system-theme.ts` poll Gnome's dark mode and follow.
+  - `pi-permission-system/config.json` configuration for `@gotgenes/pi-permission-system` extension. Edit this file only on behalf of the user and according to its docs.
+  - `pi-rtk-optimizer/config.json` configuration for `~/git/MasuRii/pi-rtk-optimizer` extension.
+  - `pi-tool-display/config.json` configuration for `~/git/MasuRii/pi-tool-display` extension.
+- `prompts/`: my own prompt templates.
+  - `update-pi.md` must use this departing instructions for updating Pi runtime.
+- `skills/`: my own skills.
   - `rtfm/`
 - `themes/`: theme definitions.
   - `catppuccin-mocha.json`
 - `docs/agents/`: repo guidance for agent workflows.
 - `sessions/`, `tmp/`: runtime or scratch data.
+- `git/`, `npm/`: sources of installed extensions
 - `settings.json`, `sandbox.json`, `trust.json`, `auth.json`, `presets.json`, `models-store.json`, `usage-extension-cache.json`: Pi runtime/config state.
 
 Source provenance:
 
 - The README lists upstream repositories this config draws from.
-- The repo is intentionally a curated personal config, not a clean-room package.
 
 ## Setup
 
-To reproduce the setup locally:
+See `README.md`.
 
-1. Back up any existing Pi configuration.
-2. Clone this repo to `~/.pi/agent`.
-3. Clone the upstream source repositories into `~/git/<owner>/<repo>/` as expected by the local workflows.
-4. Keep the upstream checkouts available if you want to refresh this repo from source rather than copying artifacts manually.
 
 Relevant workflow:
 
@@ -62,11 +58,16 @@ Relevant workflow:
 
 ## Notes / Gotchas
 
-- This repo mixes checked-in source artifacts with local runtime state. Be careful not to treat everything under the root as a hand-authored source file.
 - `docs/agents/domain.md` says domain docs should be read before exploring the codebase. In this repo, `CONTEXT.md` is the main domain guide.
-- The repo depends on external upstream checkouts under `~/git/...`; missing checkouts can make update workflows fail.
-- Some files here look like generated or machine-managed state. Verify whether a change should be committed before editing it.
+- The repo depends on external upstream checkouts under `~/git/...`; missing checkouts fail silently.
 - The setup instructions in `README.md` are part of the operating model; keep this document consistent with them.
+- `settings.json` lists paths to files (packages, extension, skills, prompts, themes)
+
+  | Enabled | Disabled | Undefined |
+  | --------------- | --------------- | --------------- |
+  | `+subfolder/file.js` | `-subfolder/file.js` | enabled by autoloading |
+  | `../../path/file.js` | `-../../path/file.js` (doesn't even show up in `pi config`) | unknown / disabled |
+
 
 ## Open Questions
 
