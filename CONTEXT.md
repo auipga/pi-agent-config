@@ -33,6 +33,7 @@ Top-level layout:
   - `pi-rtk-optimizer/config.json` configuration for `~/git/MasuRii/pi-rtk-optimizer` extension.
   - `pi-tool-display/config.json` configuration for `~/git/MasuRii/pi-tool-display` extension.
 - `prompts/`: my own prompt templates.
+  - `ask-with-tool.md` to re-ask a question with tooling instead of plain chat.
   - `update-pi.md` must use this departing instructions for updating Pi runtime.
 - `skills/`: my own skills.
   - `rtfm/`
