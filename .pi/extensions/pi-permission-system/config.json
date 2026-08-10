@@ -9,6 +9,7 @@
     "write": {
       "*": "allow",
       ".pi/*": "ask",
+      ".pi/extensions/pi-permission-system/config.json": "allow",
       "git/*"     : { "action": "deny", "reason": "Pi installs packages in this folder. Changes here would not be persistent." },
       "npm/*"     : { "action": "deny", "reason": "Pi installs packages in this folder. Changes here would not be persistent." },
       "sessions/*": { "action": "deny", "reason": "Pi sessions must not be altered by an LLM but by the harness." }
