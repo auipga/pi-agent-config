@@ -179,7 +179,7 @@
   "showCacheMissNotices": true,
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "ask",
-  "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"",
+  "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias -- ' ~/.zshrc)\"",
   "skills": [
     "-../../git/amosblomqvist/pi-config/skills/orchestrator/SKILL.md",
     "-../../git/amosblomqvist/pi-config/skills/pdf-reader/SKILL.md",
