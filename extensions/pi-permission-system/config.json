@@ -19,7 +19,10 @@
     "bash": {
       "*": "ask",
       "rm -rf *": "deny",
-      "sudo *": "ask"
+      "sudo *": "ask",
+      "git status *": "allow",
+      "git ls-files *": "allow",
+      "git diff *": "allow"
     },
     "external_directory": "ask"
   }
