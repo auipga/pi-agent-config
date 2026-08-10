@@ -22,7 +22,8 @@
       "sudo *": "ask",
       "git status *": "allow",
       "git ls-files *": "allow",
-      "git diff *": "allow"
+      "git diff *": "allow",
+      "xdg-open 'https://github.com/*'": "allow"
     },
     "external_directory": "ask"
   }
