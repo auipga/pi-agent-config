@@ -12,15 +12,14 @@
       "git/*": "deny",
       "npm/*": "deny",
       "sessions/*": "deny"
-    },
-    "external_directory": {
-      "*": "ask",
-      "~/git/amosblomqvist/pi-config/*": "allow",
-      "~/git/badlogic/pi-skills/*": "allow",
-      "~/git/benithors/skills/*": "allow",
-      "~/git/earendil-works/pi-mono/*": "allow",
-      "~/git/mattpocock/skills/*": "allow",
-      "~/git/tmustier/pi-extensions/*": "allow"
     }
-  }
+  },
+  "piInfrastructureReadPaths": [
+    "~/git/amosblomqvist/pi-config/",
+    "~/git/badlogic/pi-skills/",
+    "~/git/benithors/skills/",
+    "~/git/earendil-works/pi-mono/",
+    "~/git/mattpocock/skills/",
+    "~/git/tmustier/pi-extensions/"
+  ]
 }
