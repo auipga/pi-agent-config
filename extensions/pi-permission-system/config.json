@@ -1,5 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/gotgenes/pi-permission-system/main/schemas/permissions.schema.json",
+  "debugLog": true,
+  "permissionReviewLog": true,
   "permission": {
     "*": "allow",
     "path": {
