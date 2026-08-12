@@ -17,12 +17,76 @@
       "*.lock": "deny"
     },
     "bash": {
-      "*": "ask",
+      "*": "allow",
+
+      "rm *": "ask",
       "rm -rf *": "deny",
-      "sudo *": "ask",
+      "rmdir *": "ask",
+      "unlink *": "ask",
+      "find * -delete *": "ask",
+
+      "git *": "ask",
+      "git status": "allow",
       "git status *": "allow",
       "git ls-files *": "allow",
       "git diff *": "allow",
+
+      "truncate *": "ask",
+      "dd *": "ask",
+
+      "mkfs*": "deny",
+      "newfs_*": "deny",
+      "wipefs *": "deny",
+      "diskutil *": "deny",
+      "diskutil * eraseDisk *": "deny",
+      "diskutil * eraseVolume *": "deny",
+      "hdiutil *": "ask",
+      "gpt *": "deny",
+      "asr *": "deny",
+      "parted *": "deny",
+      "fdisk *": "deny",
+      "gdisk *": "deny",
+      "sgdisk *": "deny",
+      "cryptsetup *": "deny",
+      "pvcreate *": "deny",
+      "vgcreate *": "deny",
+      "lvcreate *": "deny",
+      "zpool *": "deny",
+
+      "chmod * -R *": "ask",
+      "chmod * --recursive *": "ask",
+      "chown * -R *": "ask",
+      "chown * --recursive *": "ask",
+
+      "mv * -f *": "ask",
+      "mv * --force *": "ask",
+      "cp * -f *": "ask",
+      "cp * --force *": "ask",
+
+      "sed -i *": "ask",
+      "sed --in-place *": "ask",
+      "perl -i *": "ask",
+      "perl -pi *": "ask",
+
+      "kill *": "ask",
+      "kill * -9 *": "deny",
+      "pkill *": "ask",
+      "killall *": "ask",
+
+      "halt *": "deny",
+      "poweroff *": "deny",
+      "reboot *": "deny",
+      "shutdown *": "deny",
+      "systemctl *": "ask",
+
+      "curl * | *": "deny",
+      "wget * | *": "deny",
+
+      "kubectl delete *": "deny",
+      "terraform destroy *": "deny",
+      "aws s3 rm * --recursive *": "deny",
+      "gcloud * delete *": "deny",
+
       "xdg-open 'https://github.com/*'": "allow"
     },
     "external_directory": "ask"
