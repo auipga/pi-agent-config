@@ -7,9 +7,9 @@ Top-level layout:
 - `README.md`: short installation notes.
 - `CONTEXT.md`: this file; the canonical local guide for agents.
 - `extensions/`: custom extensions and config files of vendored extensions.
-  - `at-file-context-guard.ts` limits reads to `@`attached paths.
   - `date.ts` sends the current date as user message by `/date`.
   - `gnome-system-theme.ts` poll Gnome's dark mode and follow.
+  - `manual-context-guard.ts` limits reads to `@`attached paths.
   - `pi-permission-system/config.json` configuration for `@gotgenes/pi-permission-system` extension. Edit this file only on behalf of the user and according to its docs.
   - `pi-rtk-optimizer/config.json` configuration for `~/git/MasuRii/pi-rtk-optimizer` extension.
   - `pi-tool-display/config.json` configuration for `~/git/MasuRii/pi-tool-display` extension.

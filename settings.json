@@ -242,7 +242,7 @@
     "../../git/tmustier/pi-extensions/raw-paste/index.ts",
     "../../git/tmustier/pi-extensions/code-actions/index.ts",
     "../../git/tmustier/pi-extensions/session-recap/index.ts",
-    "+extensions/at-file-context-guard.ts",
+    "+extensions/manual-context-guard.ts",
     "-extensions/gnome-system-theme.ts"
   ],
   "themes": [
