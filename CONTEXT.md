@@ -51,11 +51,23 @@ See `README.md`.
 - The setup instructions in `README.md` are part of the operating model; keep this document consistent with them.
 - `settings.json` lists paths to files (packages, extension, skills, prompts, themes)
 
-  | Enabled | Disabled | Undefined |
+  Depending whether the path is inside (autoloaded) or outside (only when explicitely referenced) Pi's config dir, the path notations use the `+` OR `-` prefix differently.
+
+  | Enabled | Disabled | Not listed |
   | --------------- | --------------- | --------------- |
   | `+subfolder/file.js` | `-subfolder/file.js` | enabled by autoloading |
   | `../../path/file.js` | `-../../path/file.js` (doesn't even show up in `pi config`) | unknown / disabled |
 
+To know exactly which configured extensions, prompts, skills, and themes are enabled, run:
+
+```sh
+jq 'pick(.extensions, .prompts, .skills, .themes) | with_entries(.value |= map(select(startswith("-") | not) | sub("^\\+"; "")))' settings.json
+```
+
+This filters disabled `-...` entries and normalizes explicitly enabled `+...` entries to plain paths.
+Run `pi list` to know information about `pi install`ed extensions. (this corresponds to
+`jq '{packages: (.packages // {})}' settings.json`.
+`pi list` has no clue about enabled/disabled parts of a package.
 
 ## Open Questions
 
