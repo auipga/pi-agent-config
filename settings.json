@@ -167,7 +167,7 @@
         "+skills/productivity/grilling/SKILL.md",
         "+skills/productivity/handoff/SKILL.md",
         "+skills/productivity/teach/SKILL.md",
-        "+skills/productivity/to-questionnaire/SKILL.md",
+        "-skills/productivity/to-questionnaire/SKILL.md",
         "+skills/productivity/wait-what/SKILL.md",
         "+skills/productivity/writing-for-agents/SKILL.md"
       ]
