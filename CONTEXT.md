@@ -11,7 +11,7 @@ This document is for future agents working in the repo. Use the vocabulary here 
 
 Top-level layout:
 
-- `README.md`: short project summary and installation notes.
+- `README.md`: short project summary and installation notes. Update this file when installs occur.
 - `CONTEXT.md`: this file; the canonical local guide for agents.
 - `extensions/`: custom extensions and config files of vendored extensions.
   - `at-file-context-guard.ts`
