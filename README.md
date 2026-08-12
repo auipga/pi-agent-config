@@ -19,9 +19,10 @@ To run this configuration:
 
 - backup your existing configuration
 - create a fork (optional)
-- clone this to `~/.pi/agent`
-- clone each repository from the list above into `~/git/<owner>/<repo>/`
-  (I like to fetch updates at times so the "copy it over into your repo approach" doesn't fit my need.)
+- clone this and each repository from the list above into `~/git/<owner>/<repo>/` *
+- symlink `~/.pi/agent` to `~/git/<owner>/pi-agent-config`
+
+*) I like to fetch updates at times so the "copy it over into your repo approach" doesn't fit my need.
 
 ## Fully installed things
 
