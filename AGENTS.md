@@ -33,12 +33,12 @@ Rule of thumb: if the command would look out of place in a code review of a shel
 
 ### Issue tracker
 
-Issues are tracked as local markdown files under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`.
+See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
-Triage uses the default five canonical role labels. See `docs/agents/triage-labels.md`.
+See `docs/agents/triage-labels.md`.
 
 ### Domain docs
 
-Domain documentation uses a single-context layout. See `docs/agents/domain.md`.
+See `docs/agents/domain.md`.
