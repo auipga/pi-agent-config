@@ -187,7 +187,7 @@
   "defaultProjectTrust": "ask",
   "tuiMode": "regular",
   "fullscreenScrollbar": "auto",
-  "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias -- ' ~/.zshrc)\"",
+  "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias -- ' ~/.zshrc)\"\nsource <(sed -n '/^clone() {/,/^}/p' ~/.zshrc)",
   "skills": [
     "-../../git/amosblomqvist/pi-config/skills/orchestrator/SKILL.md",
     "-../../git/amosblomqvist/pi-config/skills/pdf-reader/SKILL.md",
