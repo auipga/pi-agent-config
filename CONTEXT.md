@@ -7,18 +7,6 @@ It stores prompts, skills, extensions, themes, and supporting metadata used by P
 
 This document is for future agents working in the repo. Use the vocabulary here when naming concepts, file groups, and tasks.
 
-## Glossary
-
-- **Configuration repo**: this repository as a whole; the source of the user's Pi setup.
-- **Extension**: a Pi extension under `extensions/`.
-- **Skill**: an agent skill under `skills/`.
-- **Prompt**: a reusable prompt template under `prompts/`.
-- **Theme**: a Pi theme file under `themes/`.
-- **Domain docs**: documentation under `docs/`, especially `docs/agents/`.
-- **Update pi**: the `prompts/update-pi.md` workflow for refreshing the upstream Pi sources.
-
-Avoid inventing alternate names for these concepts unless the repo already uses them.
-
 ## Architecture
 
 Top-level layout:
