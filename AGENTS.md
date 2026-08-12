@@ -2,7 +2,7 @@
 
 ## You CANNOT
 
-- Use python in any case
+- Use python in any case because it's not installed and I won't understand it.
 
 ## About the user
 
