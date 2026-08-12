@@ -52,10 +52,9 @@ Source provenance:
 
 See `README.md`.
 
+## Update
 
-Relevant workflow:
-
-- `prompts/update-pi.md` documents the expected update process for the Pi coding agent source tree.
+`prompts/update-pi.md` documents the expected update process for the Pi coding agent source tree.
 
 ## Notes / Gotchas
 
