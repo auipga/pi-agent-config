@@ -25,6 +25,7 @@ Rule of thumb: if the command would look out of place in a code review of a shel
 
 ## Special Instructions
 
+<!-- - When reporting information to me be extremely concise and sacrifice grammar for the sake of concision. -->
 <!-- - Before each bash tool invocation, briefly state what it's/they're for and the expected high-level result, so I can read it fast. -->
 
 ## Agent skills
