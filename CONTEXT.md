@@ -1,17 +1,10 @@
 # Context
 
-## Purpose
-
-This repository is the working configuration for a personal Pi coding-agent setup.
-It stores prompts, skills, extensions, themes, and supporting metadata used by Pi.
-
-This document is for future agents working in the repo. Use the vocabulary here when naming concepts, file groups, and tasks.
-
 ## Architecture
 
 Top-level layout:
 
-- `README.md`: short project summary and installation notes. Update this file when installs occur.
+- `README.md`: short installation notes.
 - `CONTEXT.md`: this file; the canonical local guide for agents.
 - `extensions/`: custom extensions and config files of vendored extensions.
   - `at-file-context-guard.ts`
@@ -22,7 +15,7 @@ Top-level layout:
   - `pi-tool-display/config.json` configuration for `~/git/MasuRii/pi-tool-display` extension.
 - `prompts/`: my own prompt templates.
   - `ask-with-tool.md` to re-ask a question with tooling instead of plain chat.
-  - `update-pi.md` must use this departing instructions for updating Pi runtime.
+  - `update-pi.md` special update procedure for Pi.
 - `skills/`: my own skills.
   - `rtfm/`
 - `themes/`: theme definitions.
@@ -32,23 +25,10 @@ Top-level layout:
 - `git/`, `npm/`: sources of installed extensions
 - `settings.json`, `sandbox.json`, `trust.json`, `auth.json`, `presets.json`, `models-store.json`, `usage-extension-cache.json`: Pi runtime/config state.
 
-Source provenance:
-
-- The README lists upstream repositories this config draws from.
-
-## Setup
-
-See `README.md`.
-
-## Update
-
-`prompts/update-pi.md` documents the expected update process for the Pi coding agent source tree.
-
 ## Notes / Gotchas
 
 - `docs/agents/domain.md` says domain docs should be read before exploring the codebase. In this repo, `CONTEXT.md` is the main domain guide.
 - The repo depends on external upstream checkouts under `~/git/...`; missing checkouts fail silently.
-- The setup instructions in `README.md` are part of the operating model; keep this document consistent with them.
 - `settings.json` lists paths to files (packages, extension, skills, prompts, themes)
 
   Depending whether the path is inside (autoloaded) or outside (only when explicitely referenced) Pi's config dir, the path notations use the `+` OR `-` prefix differently.
@@ -68,9 +48,3 @@ This filters disabled `-...` entries and normalizes explicitly enabled `+...` en
 Run `pi list` to know information about `pi install`ed extensions. (this corresponds to
 `jq '{packages: (.packages // {})}' settings.json`.
 `pi list` has no clue about enabled/disabled parts of a package.
-
-## Open Questions
-
-- Which files are truly source-of-truth versus generated cache/state files?
-- Should this repo eventually split into multiple context docs, or stay single-context?
-- Which extensions and skills are maintained locally versus vendored from upstream?
