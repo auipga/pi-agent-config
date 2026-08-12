@@ -25,7 +25,7 @@ Rule of thumb: if the command would look out of place in a code review of a shel
 
 ## Special Instructions
 
-- Before each bash tool invocation, briefly state what it's for and the expected high-level result, so I can read it fast.
+<!-- - Before each bash tool invocation, briefly state what it's/they're for and the expected high-level result, so I can read it fast. -->
 
 ## Agent skills
 
