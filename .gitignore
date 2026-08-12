@@ -5,7 +5,6 @@ auth.json
 .env.*
 
 # Pi runtime state (created when this repo is used as ~/.pi/agent)
-.pi/
 sessions/
 git/
 mcp-cache.json
