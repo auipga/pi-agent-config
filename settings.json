@@ -121,6 +121,12 @@
       ]
     },
     {
+      "source": "npm:@gotgenes/pi-subagents-worktrees",
+      "extensions": [
+        "+src/index.ts"
+      ]
+    },
+    {
       "source": "npm:@juicesharp/rpiv-ask-user-question",
       "extensions": [
         "+index.ts"
