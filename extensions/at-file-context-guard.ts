@@ -47,14 +47,12 @@ function isAllowedPath(path: string, cwd: string, allowedPaths: Set<string>): bo
 }
 
 function buildInstructions(): string {
-	return `@ file context guard is active for this turn.
+	return `manual-context-guard is active.
 
 Rules:
-- Treat the referenced @ files as the complete intended context.
+- Treat the referenced @ paths as the complete intended context.
 - Do not inspect files outside the referenced paths with read, ls, grep, find, bash, or other tools.
-- If you are really sure other file context is required, stop and ask the user in normal text. Include a concise justification and the exact files or context needed.
-- Do not access additional files until the user explicitly approves.
-- Prefer answering from the provided file context when possible.`;
+- Prefer answering from the provided context when possible.`;
 }
 
 export default function (pi: ExtensionAPI) {
@@ -73,11 +71,9 @@ export default function (pi: ExtensionAPI) {
 		return {
 			systemPrompt: `${event.systemPrompt}\n\n${buildInstructions()}`,
 			message: {
-				customType: "at-file-context-guard",
-				display: true,
-				content: `@ file context guard active. Allowed referenced paths:\n${[...referencedPaths]
-					.map((path) => `- ${path}`)
-					.join("\n")}\n\nProject-local extension: ${CONFIG_DIR_NAME}/extensions/at-file-context-guard.ts`,
+				customType: "manual-context-guard",
+				display: false,
+				content: `Readinge nothing more than the attached paths.`,
 			},
 		};
 	});
@@ -95,8 +91,7 @@ export default function (pi: ExtensionAPI) {
 			if (!inputPath || !isAllowedPath(inputPath, ctx.cwd, state.allowedPaths)) {
 				return {
 					block: true,
-					reason:
-						"@ file context guard blocked file exploration outside referenced paths. Ask the user in normal text for approval, with a concise justification and exact requested context.",
+					reason: "blocked exploration outside referenced paths.",
 				};
 			}
 		}
@@ -106,8 +101,7 @@ export default function (pi: ExtensionAPI) {
 			if (EXPLORATORY_BASH_PATTERN.test(command)) {
 				return {
 					block: true,
-					reason:
-						"@ file context guard blocked exploratory shell file inspection. Ask the user in normal text for approval, with a concise justification and exact requested context.",
+					reason: "blocked exploratory shell file inspection.",
 				};
 			}
 		}
