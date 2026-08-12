@@ -42,3 +42,14 @@ To run this configuration:
 
 *) mono repo with more extensions than I use.
 
+## Notes / Gotchas
+
+- `settings.json` lists paths to files (packages, extension, skills, prompts, themes).
+ 
+  The path notation uses `+`, `-` or no prefix to hold its enabled state depending on whether the path is inside (autoloaded) or outside (only when explicitly referenced) of Pi's config dir.
+
+  | Enabled | Disabled | Not listed |
+  | --- | --- | --- |
+  | `+subfolder/file.js` | `-subfolder/file.js` | enabled by autoloading |
+  | `../../path/file.js` | `-../../path/file.js` (doesn't even show up in `pi config`) | unknown / disabled |
+

@@ -31,13 +31,6 @@ Top-level layout:
 - The repo depends on external upstream checkouts under `~/git/...`; missing checkouts fail silently.
 - `settings.json` lists paths to files (packages, extension, skills, prompts, themes)
 
-  Depending whether the path is inside (autoloaded) or outside (only when explicitely referenced) Pi's config dir, the path notations use the `+` OR `-` prefix differently.
-
-  | Enabled | Disabled | Not listed |
-  | --------------- | --------------- | --------------- |
-  | `+subfolder/file.js` | `-subfolder/file.js` | enabled by autoloading |
-  | `../../path/file.js` | `-../../path/file.js` (doesn't even show up in `pi config`) | unknown / disabled |
-
 To know exactly which configured extensions, prompts, skills, and themes are enabled, run:
 
 ```sh
