@@ -117,7 +117,7 @@
     {
       "source": "npm:@gotgenes/pi-subagents",
       "extensions": [
-        "-src/index.ts"
+        "+src/index.ts"
       ]
     },
     {
