@@ -7,7 +7,7 @@ Top-level layout:
 - `README.md`: short installation notes.
 - `CONTEXT.md`: this file; the canonical local guide for agents.
 - `extensions/`: custom extensions and config files of vendored extensions.
-  - `at-file-context-guard.ts`
+  - `at-file-context-guard.ts` limits reads to `@`attached paths.
   - `date.ts` sends the current date as user message by `/date`.
   - `gnome-system-theme.ts` poll Gnome's dark mode and follow.
   - `pi-permission-system/config.json` configuration for `@gotgenes/pi-permission-system` extension. Edit this file only on behalf of the user and according to its docs.
@@ -22,22 +22,18 @@ Top-level layout:
   - `catppuccin-mocha.json`
 - `docs/agents/`: repo guidance for agent workflows.
 - `sessions/`, `tmp/`: runtime or scratch data.
-- `git/`, `npm/`: sources of installed extensions
-- `settings.json`, `sandbox.json`, `trust.json`, `auth.json`, `presets.json`, `models-store.json`, `usage-extension-cache.json`: Pi runtime/config state.
+- `git/`, `npm/`: vendored extension sources handled by `pi install` and `pi remove`.
+- `settings.json` stores include paths of packages, extensions, skills, prompts and themes
+- `presets.json`: configuration for `~/git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/preset.ts` example extension.
+- `models-store.json`, `usage-extension-cache.json`: runtime/state, not informative.
 
 ## Notes / Gotchas
 
-- `docs/agents/domain.md` says domain docs should be read before exploring the codebase. In this repo, `CONTEXT.md` is the main domain guide.
-- The repo depends on external upstream checkouts under `~/git/...`; missing checkouts fail silently.
-- `settings.json` lists paths to files (packages, extension, skills, prompts, themes)
+- `docs/agents/domain.md` says domain docs should be read before exploring the codebase. `CONTEXT.md` is the main domain guide.
+- Avoid running `pi list`: it shows only *packages* but limited detail about their state (enabled/disabled).
+  Prefer `jq '{packages: (.packages // {})}' settings.json`.
+- To know precisely which non-vendored extensions, prompts, skills, and themes are truly enabled, consult `settings.json` using `jq`:
 
-To know exactly which configured extensions, prompts, skills, and themes are enabled, run:
-
-```sh
-jq 'pick(.extensions, .prompts, .skills, .themes) | with_entries(.value |= map(select(startswith("-") | not) | sub("^\\+"; "")))' settings.json
-```
-
-This filters disabled `-...` entries and normalizes explicitly enabled `+...` entries to plain paths.
-Run `pi list` to know information about `pi install`ed extensions. (this corresponds to
-`jq '{packages: (.packages // {})}' settings.json`.
-`pi list` has no clue about enabled/disabled parts of a package.
+  ```sh
+  jq 'pick(.extensions, .prompts, .skills, .themes) | with_entries(.value |= map(select(startswith("-") | not) | sub("^\\+"; "")))' settings.json
+  ```
