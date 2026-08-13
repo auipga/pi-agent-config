@@ -109,19 +109,19 @@
       ]
     },
     {
-      "source": "npm:@gotgenes/pi-permission-system",
+      "source": "../../git/gotgenes/pi-packages/packages/pi-permission-system",
       "extensions": [
         "+src/index.ts"
       ]
     },
     {
-      "source": "npm:@gotgenes/pi-subagents",
+      "source": "../../git/gotgenes/pi-packages/packages/pi-subagents",
       "extensions": [
         "+src/index.ts"
       ]
     },
     {
-      "source": "npm:@gotgenes/pi-subagents-worktrees",
+      "source": "../../git/gotgenes/pi-packages/packages/pi-subagents-worktrees",
       "extensions": [
         "+src/index.ts"
       ]

@@ -9,6 +9,7 @@ This repo is based on:
 - https://github.com/amosblomqvist/pi-config (341)
 - https://github.com/badlogic/pi-skills (2,340)
 - https://github.com/benithors/skills (70)
+- https://github.com/gotgenes/pi-packages (149)
 - https://github.com/earendil-works/pi-mono (85,363)
 - https://github.com/mattpocock/skills (209,060)
 - https://github.com/tmustier/pi-extensions (443)
@@ -34,8 +35,6 @@ To run this configuration:
 | pi-tool-display | MasuRii | `git:github.com/MasuRii/pi-tool-display` | [Code](https://github.com/MasuRii/pi-tool-display) | 248 |
 | pi-intercom | nicobailon | `git:github.com/nicobailon/pi-intercom` | [Code](https://github.com/nicobailon/pi-intercom) | 293 |
 | pi-subagents | nicobailon | `git:github.com/nicobailon/pi-subagents` | [Code](https://github.com/nicobailon/pi-subagents) | 3,013 |
-| pi-subagents | gotgenes | `npm:@gotgenes/pi-subagents` | [Code](https://github.com/gotgenes/pi-packages/tree/main/packages/pi-subagents) [PKG](https://www.npmjs.com/package/@gotgenes/pi-subagents) | 141* |
-| pi-permission-system | gotgenes | `npm:@gotgenes/pi-permission-system` | [Code](https://github.com/gotgenes/pi-packages/tree/main/packages/pi-permission-system) [PKG](https://www.npmjs.com/package/@gotgenes/pi-permission-system) | 141* |
 | pi-diff | heyhuynhgiabuu | `npm:@heyhuynhgiabuu/pi-diff` | [Code](https://github.com/buddingnewinsights/pi-diff) [PKG](https://www.npmjs.com/package/@heyhuynhgiabuu/pi-diff) | 39 |
 | rpiv-ask-user-question | juicesharp | `npm:@juicesharp/rpiv-ask-user-question` | [Code](https://github.com/juicesharp/rpiv-mono/tree/main/packages/rpiv-ask-user-question) [PKG](https://www.npmjs.com/package/@juicesharp/rpiv-ask-user-question) | 576* |
 | pi-mono-usage | emanuelcasco | `npm:pi-mono-usage` | [Code](https://github.com/emanuelcasco/pi-mono-extensions/tree/main/extensions/usage) [PKG](https://www.npmjs.com/package/pi-mono-usage) | 94* |
