@@ -93,6 +93,8 @@
       "aws s3 rm * --recursive *": "deny",
       "gcloud * delete *": "deny",
 
+      "xdg-open 'http://127.0.0.1:*/*'": "allow",
+      "xdg-open 'http://localhost:*/*'": "allow",
       "xdg-open 'https://github.com/*'": "allow"
     },
     "external_directory": "ask"
