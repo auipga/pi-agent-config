@@ -159,7 +159,7 @@ grep:createPiExtension
 Determine file sizes using `wc -c <filename>` one by one.
 
 Determine chunk sizes using `sed` and `wc` one by one.
-Example: `sed -n '44,91p;281,302p' index.html | wc -c`.
+Example: `sed -n '44,91p;281,302p' <filename> | wc -c`.
 
 Format human-readable e.g., `800 B`, `1 kB`, `2 MB`.
 
