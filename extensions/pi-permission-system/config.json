@@ -10,10 +10,13 @@
       "*.env": "deny",
       "*.env.*": "deny",
       "*.env.example": "allow",
+      ".git/objects/*": "deny",
+      ".git/logs/*": "deny",
       "~/.ssh/*": "deny"
     },
     "write": {
       "*": "ask",
+      ".git/*": "deny",
       "*.lock": "deny"
     },
     "bash": {
