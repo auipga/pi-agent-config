@@ -1,11 +1,11 @@
 ---
 name: my-scout
-description: Scout files/docs/code for a search term or task, then return a post-hoc canonical context pack with relevant reads, toll reads, tool evidence, and open questions. Use when invoked as /skill:my-scout or when the user asks for a scout-style evidence pack.
+description: Scout files/docs/code for a search term or task and return of only relevant reads.
 ---
 
 # My Scout
 
-Scout a search term or task and answer with a minimal replay-worthy context pack.
+Scout a search term or task and answer with a minimal context pack.
 
 Invocation examples:
 
@@ -17,14 +17,13 @@ Invocation examples:
 
 ## Mission
 
-Given the user argument, investigate enough to answer confidently, then emit the answer in the canonical scout format below.
+Given the user's argument, investigate enough to answer confidently, then emit the answer in the canonical scout format below.
 
 Prefer precision over breadth. The final output must separate:
 
 - **relevant reads**: sources another agent should replay/read
 - **duty/toll reads**: navigation, indexes, TOCs, broad discovery, failed or irrelevant reads
 - **tool evidence**: useful grep/find/ls/bash queries or summaries
-- **open questions / user decisions**: unresolved choices or structured decisions
 
 ## Search workflow
 
@@ -32,7 +31,7 @@ Prefer precision over breadth. The final output must separate:
    - a literal search term, or
    - a task/question that needs source discovery.
 2. Start with cheap discovery:
-   - use `grep` for exact/literal terms when likely
+   - use `grep` for exact/literal terms that sound seldom enough to not result in many hundreds of results
    - use `find` for file names or likely docs/code extensions
    - use `ls` only to understand directory shape
 3. Read likely sources.
@@ -51,10 +50,8 @@ Include entries that directly support the answer or would let another agent cont
 Good selectors:
 
 - exact line ranges for the useful passage
-- `section:<heading>` when line numbers are unavailable or the section is the unit of evidence
-- `block:<n>` for a specific code block in a markdown/doc source
 - `grep:<pattern>` when the source is best represented by a search hit rather than full read
-- `all` only for short files where all content matters
+- `full` only for short files or when all content really matters
 
 ### Skip what's considered duty/toll
 
@@ -65,25 +62,12 @@ Include reads/listings/searches that were useful only as toll:
 - broad files where nothing relevant was found
 - files inspected due to plausible matches but not needed for final answer
 
-Do not hide wasted exploration; compress it.
-
 ### Tool evidence
 
-Include non-read evidence useful for replay:
+Include evidence useful for replay:
 
 - grep/find query that located key files
 - ls summary for directory discovery
-- bash command if it produced evidence, not just validation noise
-- ask_user_question payload summary if relevant to decisions
-
-### Open questions / user decisions
-
-Include:
-
-- `none` if no unresolved choices
-- pending ambiguity that affects correctness
-- user-selected options if a decision was made
-- IDs/summaries of `ask_user_question` payloads when used
 
 ## Canonical output format
 
@@ -106,97 +90,49 @@ Always use this exact top-level shape.
 
 > <size> · <why>
   [<path>]():`<selector>`
-```
 
-Optional sections use the same quote + indented evidence style:
-
-```md
 ## Tool evidence
 
 > <tool> · <why>
   `<query-or-summary>`
-
-## Open questions / user decisions
-
-> <status> · <why>
-  `<decision-or-question-id>`
 ```
 
-For this skill, include **Tool evidence** and **Open questions / user decisions** by default. If empty, add a single `none` entry.
+If any section is empty, omit it.
 
 ## Selector grammar
 
 Use only these selector forms:
 
 ```text
-all
+full
 44-91
 44-91,280-302
-block:3
-section:Extension lifecycle
 grep:createPiExtension
-ls
 ```
 
-## Size formatting
+## Size determination and formatting
 
-Use approximate human-readable sizes:
+Determine file sizes using `wc -c <filename>` one by one.
 
-- `800 B`
-- `1 kB`
-- `10 kB`
-- `2 MB`
+Determine chunk sizes using `sed` and `wc` one by one.
+Example: `sed -n '44,91p;281,302p' index.html | wc -c`.
 
-If the exact size is unknown, estimate the source/excerpt size. Do not spend extra tool calls just to calculate size unless size is important.
+Format human-readable e.g., `800 B`, `1 kB`, `2 MB`.
 
 ## Path formatting
 
-Use paths relative to the current working directory when possible. Use absolute paths only for sources outside the project.
+Use what is the easiest to read:
+
+- Use relative paths inside the cwd.
+- Use `~/`-shortened paths outside cdw and inside $HOME.
+- Use absolute paths otherwise.
+
+Format them with the shortest possible form for markdown file links.
 
 Examples:
-
-```md
-[docs/extensions.md]():`44-91`
-[/home/deck/.pi/agent/skills/foo/SKILL.md]():`all`
-```
+- [docs/extensions.md]():`44-91,281-302`
+- [~/.config/user-dirs.dirs]():`full`
 
 ## Answer style
 
-Be concise. Put the direct answer first. The evidence pack is for replay, not prose.
-
-## Example final response
-
-```md
-# Answer
-
-Use a post-hoc context pack emitted by the skill after it finishes gathering info. Include only replay-worthy reads, plus explicit toll reads that were useful only for navigation/discovery.
-
-## Read all relevant reads
-
-> 10 kB · extension lifecycle API
-  [docs/extensions.md]():`44-91`
-
-> 1 kB · `Box`, `Text`, keybinding event handling
-  [docs/tui.md]():`210-248,280-302`
-
-## Skip what's considered duty/toll
-
-> 4 kB · index only; used to discover extension docs
-  [docs/README.md]():`all`
-
-> 8 kB · nothing relevant found
-  [CHANGELOG.md]():`all`
-
-> 800 B · directory discovery only
-  [examples/extensions/]():`ls`
-
-## Tool evidence
-
-> grep · found extension helper signature
-  `createPiExtension` in `docs/`
-
-## Open questions / user decisions
-
-> none · no unresolved choices
-  `none`
-```
+Be concise. The evidence pack is for replay, not prose.
