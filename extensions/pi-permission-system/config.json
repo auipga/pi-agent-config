@@ -97,6 +97,8 @@
       "xdg-open 'http://localhost:*/*'": "allow",
       "xdg-open 'https://github.com/*'": "allow"
     },
-    "external_directory": "ask"
+    "external_directory": {
+      "*": "ask"
+    }
   }
 }
