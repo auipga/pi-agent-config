@@ -105,6 +105,15 @@ Always use this exact top-level shape.
 
 <answer>
 
+---
+
+## Context savings
+| Saved | <percentage-saved> |
+|---|---|
+| Relevant | <relevant-context-size> |
+| Irrelevant | <irrelevant-context-size> |
+| Total Read* | <scout-context-size> |
+
 ## Read all relevant reads
 
 > <size> · <why>
@@ -125,6 +134,11 @@ Always use this exact top-level shape.
 ```
 
 If any section is empty, omit it.
+
+## Context saving calculation
+
+Count all rendered context consumed during scouting, including file reads, search/listing results, and command results.
+<!-- If exact rendered tool-output bytes cannot be recovered, state that the totals are approximate. -->
 
 ## Selector grammar
 
