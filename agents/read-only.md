@@ -2,6 +2,8 @@
 name: read-only
 description: A read only agent with lots of bash commands allowed and no write access. (Template)
 tools: read, grep, find, ls, bash
+model: openai/gpt-5.6-luna
+thinking: low
 read_more_about_this_frontmatter: https://github.com/gotgenes/pi-packages/tree/main/packages/pi-subagents#frontmatter-fields
 read_more_about_this_allowlist: https://github.com/gotgenes/pi-packages/blob/main/packages/pi-permission-system/docs/configuration.md#read-only-bash-command-allowlist
 permission:
