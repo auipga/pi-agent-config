@@ -116,11 +116,9 @@ Always use this exact top-level shape.
 
 ## Read all relevant reads
 
-> <size> · <why>
-  [<path>]():`<selector>`
-
-> <size> · <why>
-  [<path>]():`<selector>`
+| Size | Path | Reason |
+|---|---|---|
+| `<size>` | <nerd-font-icon-of-the-filetype>[<path>]():`<selector>` | <why> |
 
 ## Skip what's considered duty/toll
 
