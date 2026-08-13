@@ -163,3 +163,4 @@ Examples:
 ## Answer style
 
 Be concise. The evidence pack is for replay, not prose.
+If you could not complete your job, say so.
