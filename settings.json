@@ -223,7 +223,7 @@
     "-../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/preset.ts",
     "-../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/protected-paths.ts",
     "-../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/status-line.ts",
-    "../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/titlebar-spinner.ts",
+    "-../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/titlebar-spinner.ts",
     "-../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/todo.ts",
     "-../../git/earendil-works/pi-mono/packages/coding-agent/examples/extensions/trigger-compact.ts",
     "-../../git/amosblomqvist/pi-config/extensions/ask-user-question.ts",
