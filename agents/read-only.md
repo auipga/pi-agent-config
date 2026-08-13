@@ -4,6 +4,7 @@ description: A read only agent with lots of bash commands allowed and no write a
 tools: read, grep, find, ls, bash
 model: openai/gpt-5.6-luna
 thinking: low
+max_turns: 50
 read_more_about_this_frontmatter: https://github.com/gotgenes/pi-packages/tree/main/packages/pi-subagents#frontmatter-fields
 read_more_about_this_allowlist: https://github.com/gotgenes/pi-packages/blob/main/packages/pi-permission-system/docs/configuration.md#read-only-bash-command-allowlist
 permission:
@@ -77,4 +78,5 @@ permission:
 
 # Read Only Agent
 
+You've got 50 turns to finalize your answer to the users request.
 
