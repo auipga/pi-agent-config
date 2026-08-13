@@ -1,6 +1,0 @@
-[submodule "submodules/git/github.com/amosblomqvist/pi-config"]
-	path = submodules/git/github.com/amosblomqvist/pi-config
-	url = https://github.com/amosblomqvist/pi-config/
-[submodule "submodules/git/github.com/badlogic/pi-mono"]
-	path = submodules/git/github.com/badlogic/pi-mono
-	url = https://github.com/badlogic/pi-mono
