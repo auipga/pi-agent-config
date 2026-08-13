@@ -29,16 +29,3 @@ Rule of thumb: if the command would look out of place in a code review of a shel
 <!-- - Before each bash tool invocation, briefly state what it's/they're for and the expected high-level result, so I can read it fast. -->
 <!-- - When changing code in `~/git/earendil-works/pi-mono`, run the relevant `npm install` and `npm run build`. -->
 
-## Agent skills
-
-### Issue tracker
-
-See `docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-See `docs/agents/triage-labels.md`.
-
-### Domain docs
-
-See `docs/agents/domain.md`.
