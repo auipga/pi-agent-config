@@ -135,6 +135,11 @@ Always use this exact top-level shape.
 
 If any section is empty, omit it.
 
+## Answer style
+
+Be concise. The evidence pack is for replay, not prose.
+If you could not complete your job, say so.
+
 ## Context saving calculation
 
 Count all rendered context consumed during scouting, including file reads, search/listing results, and command results.
@@ -173,8 +178,3 @@ Format them with the shortest possible form for markdown file links.
 Examples:
 - [docs/extensions.md]():`44-91,281-302`
 - [~/.config/user-dirs.dirs]():`full`
-
-## Answer style
-
-Be concise. The evidence pack is for replay, not prose.
-If you could not complete your job, say so.
