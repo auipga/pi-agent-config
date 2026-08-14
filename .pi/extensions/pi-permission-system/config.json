@@ -16,15 +16,13 @@
     },
     "external_directory": {
       "*": "deny",
+      "/home/deck/git": "ask",
+      "/home/deck/git/amosblomqvist/pi-config": "allow",
+      "/home/deck/git/badlogic/pi-skills": "allow",
+      "/home/deck/git/earendil-works/pi-mono": "allow",
+      "/home/deck/git/gotgenes/pi-packages": "allow",
+      "/home/deck/git/tmustier/pi-extensions": "allow",
       "/below-here-is-not-yet-confirmed": "deny"
     }
-  },
-  "piInfrastructureReadPaths": [
-    "~/git/amosblomqvist/pi-config/",
-    "~/git/badlogic/pi-skills/",
-    "~/git/benithors/skills/",
-    "~/git/earendil-works/pi-mono/",
-    "~/git/mattpocock/skills/",
-    "~/git/tmustier/pi-extensions/"
-  ]
+  }
 }
