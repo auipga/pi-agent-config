@@ -230,7 +230,7 @@
     "-../../git/amosblomqvist/pi-config/extensions/bash-guard/index.ts",
     "../../git/amosblomqvist/pi-config/extensions/context.ts",
     "-../../git/amosblomqvist/pi-config/extensions/filechanges/index.ts",
-    "../../git/amosblomqvist/pi-config/extensions/memory.ts",
+    "-../../git/amosblomqvist/pi-config/extensions/memory.ts",
     "-../../git/amosblomqvist/pi-config/extensions/subagents/index.ts",
     "../../git/amosblomqvist/pi-config/extensions/web-fetch/index.ts",
     "-../../git/amosblomqvist/pi-config/extensions/web-search/index.ts",
