@@ -26,9 +26,10 @@ Source: ~/git/earendil-works/pi-mono/
 
 ## Update Source
 
-Update only the main branch. If the fetch does not show '[new tag]', skip merge and continue with Install.
+Update only the main branch.
+Fetch the tags from upstream.
+If the fetch does not show '[new tag]', skip merge and continue with install.
 Merge the latest version tag into the branch 'me' (ignore the non-error output of the command).
-Merge it into the branch 'me'.
 
 ## Install
 
