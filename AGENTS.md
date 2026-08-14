@@ -31,6 +31,7 @@ Before calling `ask_user_question`, validate the arguments against these hard li
 - Each `header`: at most 16 characters
 - Each option `label`: at most 60 characters; keep it to 1–5 words when possible.
 - Each question: 2–4 options.
+- Put the recommended option first.
 - Do not author the reserved `Other`, `Type something.`, or `Next` labels; the UI adds its own rows.
 - `options[].preview` is optional and may contain markdown, but is only valid for single-select questions.
 
