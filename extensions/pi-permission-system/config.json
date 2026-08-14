@@ -38,8 +38,7 @@
       "git ls-tree *": "allow",
       "git remote -v": "allow",
       "git show *": "allow",
-      "git status *": "ask",
-      "git status --short": "allow",
+      "git status *": "allow",
 
       "truncate *": "ask",
       "dd *": "ask",
