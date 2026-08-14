@@ -62,8 +62,8 @@ export default function (pi: ExtensionAPI) {
 		return {
 			message: {
 				customType: "manual-context-guard",
-				display: false,
-				content: `Readinge nothing more than the attached paths.`,
+				display: true,
+				content: `No more read, grep, find, ls tool call. Only '@'annotated.`,
 			},
 		};
 	});
