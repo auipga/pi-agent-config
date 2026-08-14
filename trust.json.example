@@ -1,8 +1,3 @@
 {
-  "~/git/amosblomqvist/pi-config": true,
-  "~/git/badlogic/pi-skills": true,
-  "~/git/benithors/skills": true,
-  "~/git/earendil-works/pi-mono": true,
-  "~/git/mattpocock/skills": true,
-  "~/git/tmustier/pi-extensions": true
+  "/home/deck/git/me": true
 }
