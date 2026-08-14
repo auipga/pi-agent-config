@@ -12,6 +12,7 @@
       "*.env.example": "allow",
       ".git/objects/*": "deny",
       ".git/logs/*": "deny",
+      "/tmp/*": { "action": "deny", "reason": "use `./tmp/` in the cwd." },
       "~/.ssh/*": "deny"
     },
     "write": {
