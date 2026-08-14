@@ -3,7 +3,7 @@
   "defaultProvider": "openai",
   "defaultModel": "gpt-5.6-luna",
   "defaultThinkingLevel": "low",
-  "hideThinkingBlock": true,
+  "hideThinkingBlock": false,
   "showHardwareCursor": false,
   "followUpMode": "all",
   "transport": "sse",
