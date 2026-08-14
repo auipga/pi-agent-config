@@ -23,6 +23,17 @@ Keep bash calls readable and easy to audit.
 
 Rule of thumb: if the command would look out of place in a code review of a shell script, it doesn't belong in a `bash` call either.
 
+## ask_user_question constraints
+
+Before calling `ask_user_question`, validate the arguments against these hard limits:
+
+- `questions`: 1–4 questions per call.
+- Each `header`: at most 16 characters
+- Each option `label`: at most 60 characters; keep it to 1–5 words when possible.
+- Each question: 2–4 options.
+- Do not author the reserved `Other`, `Type something.`, or `Next` labels; the UI adds its own rows.
+- `options[].preview` is optional and may contain markdown, but is only valid for single-select questions.
+
 ## Special Instructions
 
 <!-- - When reporting information to me be extremely concise and sacrifice grammar for the sake of concision. -->
