@@ -46,15 +46,6 @@ function isAllowedPath(path: string, cwd: string, allowedPaths: Set<string>): bo
 	return allowedPaths.has(resolve(cwd, path));
 }
 
-function buildInstructions(): string {
-	return `manual-context-guard is active.
-
-Rules:
-- Treat the referenced @ paths as the complete intended context.
-- Do not inspect files outside the referenced paths with read, ls, grep, find, bash, or other tools.
-- Prefer answering from the provided context when possible.`;
-}
-
 export default function (pi: ExtensionAPI) {
 	const state: GuardState = {
 		active: false,
@@ -69,7 +60,6 @@ export default function (pi: ExtensionAPI) {
 		if (!state.active) return;
 
 		return {
-			systemPrompt: `${event.systemPrompt}\n\n${buildInstructions()}`,
 			message: {
 				customType: "manual-context-guard",
 				display: false,
