@@ -103,6 +103,11 @@
     },
     "external_directory": {
       "*": "ask",
+      "/home/deck/git/amosblomqvist/pi-subagents/agents/*": "allow",
+      "/home/deck/git/benithors/skills/skills/*": "allow",
+      "/home/deck/git/mattpocock/skills/skills/*": "allow",
+      "/home/deck/git/tmustier/pi-extensions/extending-pi/*": "allow",
+      "/tmp": { "action": "deny", "reason": "use `./tmp/` in the cwd." },
       "/below-here-is-not-yet-confirmed": "deny"
     }
   }
