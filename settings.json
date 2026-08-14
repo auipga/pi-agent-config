@@ -57,7 +57,7 @@
     {
       "source": "git:github.com/badlogic/pi-telegram",
       "extensions": [
-        "+index.ts"
+        "-index.ts"
       ]
     },
     {
