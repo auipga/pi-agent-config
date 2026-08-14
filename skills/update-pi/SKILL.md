@@ -1,5 +1,24 @@
 ---
-description: Update Pi Coding Agent
+name: update-pi
+description: Update Pi Coding Agent (customized instructions)
+tools: read, grep, find, ls, bash
+model: openai/gpt-5.6-luna
+thinking: low
+max_turns: 20
+read_more_about_this_frontmatter: https://github.com/gotgenes/pi-packages/tree/main/packages/pi-subagents#frontmatter-fields
+permission:
+  "*": deny
+  read: allow
+  grep: allow
+  find: allow
+  ls: allow
+  bash:
+    "*": deny
+    "git fetch *": "allow"
+    "npm install": "allow"
+    "npm run build": "allow"
+  external_directory:
+    "*": deny
 ---
 
 Source: ~/git/earendil-works/pi-mono/
