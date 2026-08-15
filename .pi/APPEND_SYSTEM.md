@@ -1,3 +1,7 @@
+## Project linking
+
+This project lives at `~/git/me/pi-agent-config` and is symlinked to `~/.pi/agent`.
+
 ## Agent skills
 
 ### Issue tracker
