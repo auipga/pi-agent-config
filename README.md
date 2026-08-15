@@ -33,8 +33,6 @@ To run this configuration:
 | pi-token-stats | dheerapat | `git:github.com/dheerapat/pi-token-stats` | [Code](https://github.com/dheerapat/pi-token-stats) | 2 |
 | pi-rtk-optimizer | MasuRii | `git:github.com/MasuRii/pi-rtk-optimizer` | [Code](https://github.com/MasuRii/pi-rtk-optimizer) | 226 |
 | pi-tool-display | MasuRii | `git:github.com/MasuRii/pi-tool-display` | [Code](https://github.com/MasuRii/pi-tool-display) | 248 |
-| pi-intercom | nicobailon | `git:github.com/nicobailon/pi-intercom` | [Code](https://github.com/nicobailon/pi-intercom) | 293 |
-| pi-subagents | nicobailon | `git:github.com/nicobailon/pi-subagents` | [Code](https://github.com/nicobailon/pi-subagents) | 3,013 |
 | pi-diff | heyhuynhgiabuu | `npm:@heyhuynhgiabuu/pi-diff` | [Code](https://github.com/buddingnewinsights/pi-diff) [PKG](https://www.npmjs.com/package/@heyhuynhgiabuu/pi-diff) | 39 |
 | rpiv-ask-user-question | juicesharp | `npm:@juicesharp/rpiv-ask-user-question` | [Code](https://github.com/juicesharp/rpiv-mono/tree/main/packages/rpiv-ask-user-question) [PKG](https://www.npmjs.com/package/@juicesharp/rpiv-ask-user-question) | 576* |
 | pi-mono-usage | emanuelcasco | `npm:pi-mono-usage` | [Code](https://github.com/emanuelcasco/pi-mono-extensions/tree/main/extensions/usage) [PKG](https://www.npmjs.com/package/pi-mono-usage) | 94* |

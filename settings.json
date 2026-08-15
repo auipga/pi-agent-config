@@ -61,33 +61,6 @@
       ]
     },
     {
-      "source": "git:github.com/nicobailon/pi-subagents",
-      "extensions": [
-        "-index.ts"
-      ],
-      "prompts": [
-        "-prompts/gather-context-and-clarify.md",
-        "-prompts/parallel-cleanup.md",
-        "-prompts/parallel-context-build.md",
-        "-prompts/parallel-handoff-plan.md",
-        "-prompts/parallel-research.md",
-        "-prompts/parallel-review.md",
-        "-prompts/review-loop.md"
-      ],
-      "skills": [
-        "-skills/pi-subagents/SKILL.md"
-      ]
-    },
-    {
-      "source": "git:github.com/nicobailon/pi-intercom",
-      "extensions": [
-        "-index.ts"
-      ],
-      "skills": [
-        "-skills/pi-intercom/SKILL.md"
-      ]
-    },
-    {
       "source": "npm:pi-mono-usage",
       "extensions": [
         "+index.ts"
