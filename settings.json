@@ -7,7 +7,7 @@
   "showHardwareCursor": false,
   "followUpMode": "all",
   "transport": "sse",
-  "quietStartup": false,
+  "quietStartup": true,
   "doubleEscapeAction": "tree",
   "treeFilterMode": "no-tools",
   "theme": "light/dark",
@@ -214,6 +214,7 @@
     "../../git/tmustier/pi-extensions/code-actions/index.ts",
     "../../git/tmustier/pi-extensions/session-recap/index.ts",
     "+extensions/manual-context-guard.ts",
+    "+extensions/extension-header.ts",
     "-extensions/gnome-system-theme.ts"
   ],
   "themes": [
