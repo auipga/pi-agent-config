@@ -245,8 +245,17 @@ function loadState(): PersistedHeaderState {
 	return readJson<PersistedHeaderState>(STATE_PATH, { baseline: [] });
 }
 
+function trackedResources(resources: Resource[]): Resource[] {
+	return resources.filter((resource) => resource.scope !== "project");
+}
+
+function isProjectResourceId(id: string): boolean {
+	return id.replace(/\\/g, "/").includes("/.agents/skills/");
+}
+
 function saveState(resources: Resource[]): void {
-	writeFileSync(STATE_PATH, `${JSON.stringify({ baseline: resources.map((resource) => resource.id).sort() }, null, 2)}\n`);
+	const tracked = trackedResources(resources);
+	writeFileSync(STATE_PATH, `${JSON.stringify({ baseline: tracked.map((resource) => resource.id).sort() }, null, 2)}\n`);
 }
 
 function diffInventory(resources: Resource[]): Inventory {
@@ -254,9 +263,9 @@ function diffInventory(resources: Resource[]): Inventory {
 		saveState(resources);
 		return { resources, added: [], removed: [] };
 	}
-	const previous = new Set(loadState().baseline);
-	const current = new Set(resources.map((resource) => resource.id));
-	const added = resources.filter((resource) => !previous.has(resource.id));
+	const previous = new Set(loadState().baseline.filter((id) => !isProjectResourceId(id)));
+	const current = new Set(trackedResources(resources).map((resource) => resource.id));
+	const added = trackedResources(resources).filter((resource) => !previous.has(resource.id));
 	const removed = [...previous].filter((id) => !current.has(id)).map((id) => {
 		const [kind, ...parts] = id.split(":");
 		return {
@@ -299,8 +308,8 @@ function countKinds(resources: Resource[]): string {
 }
 
 function displayGroupName(key: string): string {
-	if (key === "internal") return "Custom";
-	if (key === "project") return "📁 Project";
+	if (key === "internal") return "User";
+	if (key === "project") return "Project";
 	return key;
 }
 
@@ -354,15 +363,23 @@ class HeaderComponent {
 	}
 
 	private summaryBody(): string[] {
-		const { resources, added, removed } = this.inventory;
-		const project = resources.filter((resource) => resource.scope === "project");
-		const body = [ ];
-		if (added.length > 0 || removed.length > 0) {
-			const changes = [
-				added.length > 0 ? `+${added.length} added` : undefined,
-				removed.length > 0 ? `${removed.length} removed` : undefined,
-			].filter((change): change is string => change !== undefined);
-			body.push(this.color("warning", `⚠️ ${changes.join(" · ")} · Ctrl-O details`));
+		const { added, removed } = this.inventory;
+		const body: string[] = [];
+		if (added.length > 0) {
+			body.push(this.color("warning", `⚠️ +${added.length} added`));
+			for (const [key, group] of groupResources(added)) {
+				const title = key === "internal" || key === "project" ? displayGroupName(key) : key;
+				body.push(this.color("mdHeading", `[${title}]`));
+				for (const resource of group) body.push(`  ${KIND_ICON[resource.kind]} ${resource.label}`);
+			}
+		}
+		if (removed.length > 0) {
+			body.push(this.color("warning", `⚠️ +${removed.length} removed`));
+			for (const [key, group] of groupResources(removed)) {
+				const title = key === "internal" || key === "project" ? displayGroupName(key) : key;
+				body.push(this.color("mdHeading", `[${title}]`));
+				for (const resource of group) body.push(`  ${KIND_ICON[resource.kind]} ${resource.label}`);
+			}
 		}
 		return body;
 	}
@@ -371,6 +388,10 @@ class HeaderComponent {
 		const { resources, added, removed } = this.inventory;
 		const addedIds = new Set(added.map((resource) => resource.id));
 		const body: string[] = [];
+		if (removed.length > 0) {
+			body.push(this.color("warning", "[⚠️ Removed since acknowledged startup]"));
+			for (const resource of removed) body.push(`− ${KIND_ICON[resource.kind]} ${resource.label}`);
+		}
 		for (const [key, group] of groupResources(resources)) {
 			const only = group[0];
 			const sourceName = key.replace(/^[^ ]+ /, "").split("/").pop();
@@ -382,7 +403,7 @@ class HeaderComponent {
 				continue;
 			}
 			const title = `${displayGroupName(key)}`;
-			body.push(this.color("mdHeading", `[${title}]`));
+			body.push(this.color("mdHeading", `${title}`));
 			const subgroups = new Map<string, Resource[]>();
 			for (const resource of group) {
 				const subgroup = resource.kind === "skill" && resource.subgroup ? resource.subgroup : "";
@@ -405,13 +426,6 @@ class HeaderComponent {
 				}
 			}
 		}
-		if (removed.length > 0) {
-			body.push(this.color("warning", "[⚠️ Removed since acknowledged startup]"));
-			for (const resource of removed) body.push(`− ${KIND_ICON[resource.kind]} ${resource.label}`);
-		}
-		body.push("");
-		body.push(this.color("mdHeading", "[Session]"));
-		body.push(`${this.session.getSessionFile() ? "💾 saved" : "⚡ temporary"}${this.session.getSessionFile() ? ` · ${shortPath(this.session.getSessionFile()!)}` : ""}`);
 		return body;
 	}
 
