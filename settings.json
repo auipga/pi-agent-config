@@ -9,7 +9,7 @@
   "transport": "sse",
   "quietStartup": false,
   "doubleEscapeAction": "tree",
-  "treeFilterMode": "all",
+  "treeFilterMode": "no-tools",
   "theme": "light/dark",
   "enabledModels": [
     "openai/gpt-5.4-mini",
