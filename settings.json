@@ -145,6 +145,7 @@
         "+skills/productivity/writing-for-agents/SKILL.md"
       ]
     },
+    "npm:pi-token-speed",
     "npm:pi-wakatime"
   ],
   "terminal": {
@@ -161,6 +162,12 @@
   "tuiMode": "regular",
   "fullscreenScrollbar": "auto",
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias -- ' ~/.zshrc)\"\nsource <(sed -n '/^clone() {/,/^}/p' ~/.zshrc)",
+  "tokenSpeed": {
+    "display": "full",
+    "useProviderTokens": true,
+    "endTpsBehavior": "average",
+    "countStrategy": "direct"
+  },
   "skills": [
     "-../../git/amosblomqvist/pi-config/skills/orchestrator/SKILL.md",
     "-../../git/amosblomqvist/pi-config/skills/pdf-reader/SKILL.md",
