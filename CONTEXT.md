@@ -6,7 +6,7 @@ Top-level layout:
 
 - `README.md`: short installation notes.
 - `CONTEXT.md`: this file; the canonical local guide for agents.
-- `extensions/`: custom extensions and config files of vendored extensions.
+- `extensions/`: custom extensions (`ts` files) and config (`json` files) of vendored extensions.
   - `date.ts` sends the current date as user message by `/date`.
   - `gnome-system-theme.ts` poll Gnome's dark mode and follow.
   - `manual-context-guard.ts` limits reads to `@`attached paths.
