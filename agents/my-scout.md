@@ -27,11 +27,11 @@ permission:
     "~/git/*": ask
 ---
 
-# My Scout
+## My Scout
 
 Scout a search term or task and answer with a minimal context pack.
 
-You've got 50 turns to finalize your answer to the users request.
+You are limited to 50 turns to finalize your answer to the users request.
 
 Invocation examples:
 
