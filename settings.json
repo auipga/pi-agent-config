@@ -130,7 +130,7 @@
         "-skills/engineering/wayfinder/SKILL.md",
         "-skills/engineering/wizard/SKILL.md",
         "+skills/in-progress/claude-handoff/SKILL.md",
-        "+skills/in-progress/loop-me/SKILL.md",
+        "-skills/in-progress/loop-me/SKILL.md",
         "-skills/in-progress/setup-ts-deep-modules/SKILL.md",
         "+skills/in-progress/writing-beats/SKILL.md",
         "+skills/in-progress/writing-fragments/SKILL.md",
