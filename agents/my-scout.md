@@ -2,8 +2,6 @@
 name: my-scout
 description: Scout files/docs/code for a search term or task and return of only relevant reads.
 tools: read, grep, find, ls, bash
-model: openai/gpt-5.6-luna
-thinking: low
 max_turns: 50
 read_more_about_this_frontmatter: https://github.com/gotgenes/pi-packages/tree/main/packages/pi-subagents#frontmatter-fields
 permission:
