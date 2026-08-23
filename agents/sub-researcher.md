@@ -1,0 +1,1 @@
+../../../amosblomqvist/pi-subagents/agents/researcher.md
