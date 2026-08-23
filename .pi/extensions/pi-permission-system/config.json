@@ -19,8 +19,6 @@
       "themes/*": "allow"
     },
     "external_directory": {
-      "*": "deny",
-      "/home/deck/git": "ask",
       "/home/deck/git/amosblomqvist/pi-config": "allow",
       "/home/deck/git/badlogic/pi-skills": "allow",
       "/home/deck/git/earendil-works/pi-mono": "allow",
