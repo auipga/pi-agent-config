@@ -4,6 +4,9 @@ auth.json
 .env
 .env.*
 
+# hopefully remove it from ls, grep and find tools
+.git/
+
 # Pi runtime state (created when this repo is used as ~/.pi/agent)
 sessions/
 git/
