@@ -6,10 +6,11 @@ max_turns: 50
 read_more_about_this_frontmatter: https://github.com/gotgenes/pi-packages/tree/main/packages/pi-subagents#frontmatter-fields
 permission:
   "*": deny
-  read: allow
-  grep: allow
-  find: allow
   ls: allow
+  find: allow
+  grep: allow
+  read: allow
+  edit: deny
   write: deny
   bash:
     "*": deny
