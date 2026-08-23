@@ -2,18 +2,6 @@
 
 A small library of my personal [pi](https://github.com/earendil-works/pi) prompts, skills and extensions.
 
-## Sources
-
-This repo is based on:
-
-- https://github.com/amosblomqvist/pi-config (341)
-- https://github.com/badlogic/pi-skills (2,340)
-- https://github.com/benithors/skills (70)
-- https://github.com/gotgenes/pi-packages (149)
-- https://github.com/earendil-works/pi-mono (85,363)
-- https://github.com/mattpocock/skills (209,060)
-- https://github.com/tmustier/pi-extensions (443)
-
 ## Setup
 
 To run this configuration:
