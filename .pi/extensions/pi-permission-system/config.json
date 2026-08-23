@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/gotgenes/pi-permission-system/main/schemas/permissions.schema.json",
+  "$schema": "../../../../../../git/gotgenes/pi-packages/packages/pi-permission-system/schemas/permissions.schema.json",
   "permission": {
     "path": {
       "*": "allow",
