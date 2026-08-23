@@ -13,21 +13,6 @@ To run this configuration:
 
 *) I like to fetch updates at times so the "copy it over into your repo approach" doesn't fit my need.
 
-## Fully installed things
-
-| Name | Owner | `pi install ...` | URLs........ | Stars (8/8/26) |
-| --- | --- | --- | --- | --- |
-| pi-telegram | badlogic | `git:github.com/badlogic/pi-telegram` | [Code](https://github.com/badlogic/pi-telegram) | 272 |
-| pi-token-stats | dheerapat | `git:github.com/dheerapat/pi-token-stats` | [Code](https://github.com/dheerapat/pi-token-stats) | 2 |
-| pi-rtk-optimizer | MasuRii | `git:github.com/MasuRii/pi-rtk-optimizer` | [Code](https://github.com/MasuRii/pi-rtk-optimizer) | 226 |
-| pi-tool-display | MasuRii | `git:github.com/MasuRii/pi-tool-display` | [Code](https://github.com/MasuRii/pi-tool-display) | 248 |
-| pi-diff | heyhuynhgiabuu | `npm:@heyhuynhgiabuu/pi-diff` | [Code](https://github.com/buddingnewinsights/pi-diff) [PKG](https://www.npmjs.com/package/@heyhuynhgiabuu/pi-diff) | 39 |
-| rpiv-ask-user-question | juicesharp | `npm:@juicesharp/rpiv-ask-user-question` | [Code](https://github.com/juicesharp/rpiv-mono/tree/main/packages/rpiv-ask-user-question) [PKG](https://www.npmjs.com/package/@juicesharp/rpiv-ask-user-question) | 576* |
-| pi-mono-usage | emanuelcasco | `npm:pi-mono-usage` | [Code](https://github.com/emanuelcasco/pi-mono-extensions/tree/main/extensions/usage) [PKG](https://www.npmjs.com/package/pi-mono-usage) | 94* |
-| pi-wakatime | ttttmr | `npm:pi-wakatime` | [Code](https://github.com/ttttmr/pi-wakatime) [PKG](https://www.npmjs.com/package/pi-wakatime) | 7 |
-
-*) mono repo with more extensions than I use.
-
 ## Notes / Gotchas
 
 - `settings.json` lists paths to files (packages, extension, skills, prompts, themes).
