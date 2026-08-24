@@ -1,4 +1,9 @@
 {
+  "local-fast": {
+    "provider": "llama.cpp",
+    "model": "unsloth/Qwen3.5-4B-GGUF:Q4_K_S",
+    "thinkingLevel": "medium"
+  },
   "fast": {
     "provider": "openai-codex",
     "model": "gpt-5.5",
