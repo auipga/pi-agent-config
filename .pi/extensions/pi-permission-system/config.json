@@ -20,9 +20,12 @@
     },
     "external_directory": {
       "/home/deck/git/amosblomqvist/pi-config/*": "allow",
+      "/home/deck/git/amosblomqvist/pi-subagents/*": "allow",
       "/home/deck/git/badlogic/pi-skills/*": "allow",
+      "/home/deck/git/benithors/skills/*": "allow",
       "/home/deck/git/earendil-works/pi-mono/*": "allow",
       "/home/deck/git/gotgenes/pi-packages/*": "allow",
+      "/home/deck/git/mattpocock/skills/*": "allow",
       "/home/deck/git/tmustier/pi-extensions/*": "allow",
       "/below-here-is-not-yet-confirmed": "deny"
     }
