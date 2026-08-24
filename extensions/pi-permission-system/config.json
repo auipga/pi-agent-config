@@ -12,13 +12,15 @@
       "*.env.example": "allow",
       ".git/objects/*": "deny",
       ".git/logs/*": "deny",
+      "/TODO.nix/*": "allow",
       "/tmp/*": { "action": "deny", "reason": "use `./tmp/` in the cwd." },
       "~/.ssh/*": "deny"
     },
     "write": {
       "*": "ask",
       ".git/*": "deny",
-      "*.lock": "deny"
+      "*.lock": "deny",
+      "/nix/*": "deny"
     },
     "bash": {
       "*": "allow",
@@ -106,6 +108,7 @@
       "/home/deck/git/benithors/skills/skills/*": "allow",
       "/home/deck/git/mattpocock/skills/skills/*": "allow",
       "/home/deck/git/tmustier/pi-extensions/extending-pi/*": "allow",
+      "/nix/*": "allow",
       "/tmp": { "action": "deny", "reason": "use `./tmp/` in the cwd." },
       "/below-here-is-not-yet-confirmed": "deny"
     }
