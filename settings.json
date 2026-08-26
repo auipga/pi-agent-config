@@ -148,7 +148,12 @@
         "+skills/productivity/writing-for-agents/SKILL.md"
       ]
     },
-    "npm:pi-token-speed",
+    {
+      "source": "npm:pi-token-speed",
+      "extensions": [
+        "-index.ts"
+      ]
+    },
     "npm:pi-wakatime"
   ],
   "terminal": {
