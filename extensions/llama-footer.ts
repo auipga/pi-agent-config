@@ -18,10 +18,11 @@ interface SlotInfo {
   id: number;
   n_ctx?: number;
   is_processing?: boolean;
-  n_prompt_tokens?: number;
-  n_prompt_tokens_processed?: number;
-  n_prompt_tokens_cache?: number;
-  n_decoded?: number;
+  // TODO: check these next 4 lines
+  n_prompt_tokens?: number; // invalid?
+  n_prompt_tokens_processed?: number; // invalid?
+  n_prompt_tokens_cache?: number; // invalid?
+  n_decoded?: number; // do you mean next_token.n_decoded ?
   n_past?: number;
 }
 
@@ -31,6 +32,7 @@ interface Metrics {
   promptSeconds: number;
   predictedTokens: number;
   predictedSeconds: number;
+  predictedTokensSeconds: number;
   requestsProcessing: number;
   requestsDeferred: number;
 }
@@ -57,7 +59,7 @@ class FooterState {
   generationDuration?: number;
   generationSpeed?: number;
   waitingStartedAt?: number;
-  waitingCount = 0;
+  waitingCount = 0; // wait list number
   waitingFinishedAt?: number;
   waitingFinalCount?: number;
   waitingFinalDuration?: number;
@@ -73,10 +75,13 @@ function formatNumber(value: number): string {
 }
 
 function formatDuration(milliseconds: number): string {
+  // TODO: if >= 90m show as `[h:mm:ss]`
+  // TODO: if >= 90s show as `[m:ss]`
   return `${Math.max(0, Math.round(milliseconds / 1000))}s`;
 }
 
-function formatBar(value: number, width = 10): string {
+function formatBar(value: number, width = 20): string {
+  // TODO: use Fractional glyphs for smoother boundaries: ▏ ▎ ▍ ▌ ▋ ▊ ▉ █
   const filled = Math.max(0, Math.min(width, Math.round(value * width)));
   return "█".repeat(filled) + "░".repeat(width - filled);
 }
@@ -92,8 +97,19 @@ function parseMetrics(text: string): Metrics {
     promptSeconds: read("prompt_seconds_total"),
     predictedTokens: read("tokens_predicted_total"),
     predictedSeconds: read("tokens_predicted_seconds_total"),
+    predictedTokensSeconds: read("predicted_tokens_seconds"),
     requestsProcessing: read("requests_processing"),
     requestsDeferred: read("requests_deferred"),
+    /* TODO: think about these other values:
+       [name  Type  Description]
+       n_tokens_max	Counter	High watermark of the context size observed.
+       n_decode_total	Counter	Total Number of llama_decode() calls.
+       n_busy_slots_per_decode	Gauge	Average number of busy slots per llama_decode() call.
+       spec_decode_num_draft_tokens_total	Counter	Total draft tokens generated (0 when spec-decode is off).
+       spec_decode_num_accepted_tokens_total	Counter	Total draft tokens accepted by the target model (0 when spec-decode is off).
+       spec_decode_num_drafts_total	Counter	Total speculative decoding verification steps (0 when spec-decode is off).
+       spec_decode_num_accepted_tokens_per_pos_total	Counter	Accepted tokens per draft position (labeled position="N"; absent when spec-decode is off or before the first completed speculative request).
+    */
   };
 }
 
@@ -103,6 +119,7 @@ function modelQuery(url: string, model: string): string {
 }
 
 async function getJson<T>(url: string, signal: AbortSignal): Promise<T> {
+  // TODO: refactor this [1]
   const response = await fetch(url, {
     signal,
     headers: { Authorization: `Bearer ${API_KEY}` },
@@ -112,6 +129,7 @@ async function getJson<T>(url: string, signal: AbortSignal): Promise<T> {
 }
 
 async function getText(url: string, signal: AbortSignal): Promise<string> {
+  // TODO: refactor this [1]
   const response = await fetch(url, {
     signal,
     headers: { Authorization: `Bearer ${API_KEY}` },
@@ -153,8 +171,8 @@ function renderStatus(state: FooterState, now: number): string {
   }
 
   const context = state.contextSize > 0
-    ? `Ctx [${formatBar(state.contextUsed / state.contextSize)}] ${formatNumber(state.contextUsed)}/${formatNumber(state.contextSize)}`
-    : "Ctx [??????????]";
+    ? `Ctx [${formatBar(state.contextUsed / state.contextSize)}] ${formatNumber(state.contextUsed)}/${formatNumber(state.contextSize)}` // TODO: add percentage used/size
+    : "Ctx [???]";
   const parts = [READY, context];
 
   if (state.requestSeenQueued) {
@@ -169,21 +187,21 @@ function renderStatus(state: FooterState, now: number): string {
     const remaining = Math.max(0, state.promptTotal - state.promptProcessed);
     const ratio = state.promptTotal > 0 ? state.promptProcessed / state.promptTotal : 0;
     const elapsed = state.promptStartedAt === undefined ? 0 : now - state.promptStartedAt;
-    parts.push(`${SPINNER[state.spinner % SPINNER.length]} PP [${formatBar(ratio)}] ⏱ ${formatDuration(elapsed)} ${formatNumber(remaining)}/${formatNumber(state.promptTotal)} left ${Math.round(ratio * 100)}%`);
-    if (state.promptSpeed !== undefined) parts.push(`${Math.round(state.promptSpeed)} t/s`);
+    parts.push(`${SPINNER[state.spinner % SPINNER.length]} PP [${formatBar(ratio)}] ⏱ ${formatDuration(elapsed)} ${formatNumber(remaining)}/${formatNumber(state.promptTotal)} left ${Math.round(ratio * 100)}%`); // TODO: show the invers, not what's left but what's completed. Use a really short word or abbrevation or loading icon or still spinner icon
+    if (state.promptSpeed !== undefined) parts.push(`${Math.round(state.promptSpeed)} tps`);
   } else if (state.promptFinishedAt && state.promptDuration !== undefined) {
-    const speed = state.promptSpeed === undefined ? "" : ` ≈ ${Math.round(state.promptSpeed)} t/s`;
+    const speed = state.promptSpeed === undefined ? "" : ` ≈ ${Math.round(state.promptSpeed)} tps`;
     parts.push(`✓ PP ${formatDuration(state.promptDuration)} for ${formatNumber(state.promptTokens ?? 0)}${speed}`);
   }
 
   if (state.stage === "generation") {
     const elapsed = state.generationStartedAt === undefined ? 0 : now - state.generationStartedAt;
     const speed = state.generationDuration && state.generationTokens > 0
-      ? ` ≈ ${Math.round(state.generationTokens / (state.generationDuration / 1000))} t/s`
+      ? ` ≈ ${Math.round(state.generationTokens / (state.generationDuration / 1000))} tps`
       : "";
     parts.push(`${SPINNER[state.spinner % SPINNER.length]} TG ⏱ ${formatDuration(elapsed)} ${state.generationTokens}t${speed}`);
   } else if (state.generationFinishedAt && state.generationDuration !== undefined) {
-    const speed = state.generationSpeed === undefined ? "" : ` ≈ ${Math.round(state.generationSpeed)} t/s`;
+    const speed = state.generationSpeed === undefined ? "" : ` ≈ ${Math.round(state.generationSpeed)} tps`;
     parts.push(`✓ TG ${formatDuration(state.generationDuration)} for ${state.generationTokens}t${speed}`);
   }
 
@@ -225,6 +243,7 @@ export default function (pi: ExtensionAPI) {
 
   const refreshStatus = () => {
     if (context?.hasUI) context.ui.setStatus(STATUS_KEY, renderStatus(state, Date.now()));
+    // TODO: debounce like useMemo?
   };
 
   const poll = async () => {
@@ -247,7 +266,7 @@ export default function (pi: ExtensionAPI) {
       const modelStatus = modelInfo?.status?.value;
       state.model = model;
       state.modelReady = modelStatus === "loaded" || modelStatus === undefined;
-      state.loadingProgress = modelInfo?.status?.progress;
+      state.loadingProgress = modelInfo?.status?.progress; // TODO: this looks like a mix of /models/sse . Even if not, read https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md#openai-compatible-api-endpoints (only the linked chapter) 
 
       if (state.modelReady) {
         const [props, slots, metricsText] = await Promise.all([
@@ -257,8 +276,9 @@ export default function (pi: ExtensionAPI) {
         ]);
         state.slots = slots;
         state.metrics = parseMetrics(metricsText);
-        state.contextSize = props.n_ctx ?? slots.find((slot) => slot.n_ctx)?.n_ctx ?? 0;
-        const activeSlot = slots.find((slot) => slot.is_processing) ?? slots.find((slot) => slot.n_prompt_tokens !== undefined);
+        state.contextSize = props.n_ctx ?? slots.find((slot) => slot.n_ctx)?.n_ctx ?? 0; // TODO: looks like slop. why should props.n_ctx ever be not enough?
+        // TODO: in my thinking the slots are a fallback source of information. Let me know, if I'm wrong. But taking the first slot that has n_ctx is random. This could be another agent but not me.
+        const activeSlot = slots.find((slot) => slot.is_processing) ?? slots.find((slot) => slot.n_prompt_tokens !== undefined); // TODO: Woah, this is even more scary! **Explain** this to me.
         if (activeSlot) {
           state.promptTotal = activeSlot.n_prompt_tokens ?? state.promptTotal;
           state.promptCached = activeSlot.n_prompt_tokens_cache ?? state.promptCached;
@@ -277,12 +297,15 @@ export default function (pi: ExtensionAPI) {
         const metrics = state.metrics;
         if (state.stage === "prompt" && lastMetrics && metrics.promptTokens > lastMetrics.promptTokens) {
           state.promptSpeed = (metrics.promptTokens - lastMetrics.promptTokens) / Math.max(0.001, metrics.promptSeconds - lastMetrics.promptSeconds);
+          // TODO: think about a moving average over a time frame
         }
         if (state.stage === "generation" && lastMetrics && metrics.predictedTokens > lastMetrics.predictedTokens) {
           state.generationSpeed = (metrics.predictedTokens - lastMetrics.predictedTokens) / Math.max(0.001, metrics.predictedSeconds - lastMetrics.predictedSeconds);
+          // TODO: think about a moving average over a time frame
         }
         state.waitingCount = metrics.requestsDeferred;
         if (state.requestActive && metrics.requestsDeferred > 0 && state.waitingStartedAt === undefined) {
+          // TODO: how can the state.requestActive only be true when activeSlot.is_processing is true too but we mark it with the current time for waitingStartedAt? I'd think that when our request is deferred it cannot be active or processing? Explain that to me.
           state.requestSeenQueued = true;
           state.waitingStartedAt = Date.now();
         }
@@ -316,12 +339,13 @@ export default function (pi: ExtensionAPI) {
   });
 
   pi.on("model_select", async (_event, ctx) => {
-    state.modelReady = false;
-    state.loadingProgress = undefined;
+    state.modelReady = false; // TODO: can this be true when the model has been loaded before or would we already know and have handled it?
+    state.loadingProgress = undefined; // TODO: can this be 1 (already loaded) here already?
     startPolling(ctx);
   });
 
   pi.on("input", async (_event, ctx) => {
+    // TODO: changes to the state occur by submitting, is "on input" the correct event for this? is on input really needed or does before_agent_start trigger on submit?
     resetRequest();
     context = ctx;
     refreshStatus();
