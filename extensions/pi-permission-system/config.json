@@ -31,13 +31,11 @@
     },
     "bash": {
       "*": "allow",
-
       "rm *": "ask",
       "rm -rf *": "deny",
       "rmdir *": "ask",
       "unlink *": "ask",
       "find * -delete *": "ask",
-
       "git *": "ask",
       "git blame *": "allow",
       "git branch": "allow",
@@ -48,10 +46,8 @@
       "git remote -v": "allow",
       "git show *": "allow",
       "git status *": "allow",
-
       "truncate *": "ask",
       "dd *": "ask",
-
       "mkfs*": "deny",
       "newfs_*": "deny",
       "wipefs *": "deny",
@@ -70,41 +66,33 @@
       "vgcreate *": "deny",
       "lvcreate *": "deny",
       "zpool *": "deny",
-
       "chmod * -R *": "ask",
       "chmod * --recursive *": "ask",
       "chown * -R *": "ask",
       "chown * --recursive *": "ask",
-
       "mv * -f *": "ask",
       "mv * --force *": "ask",
       "cp * -f *": "ask",
       "cp * --force *": "ask",
-
       "sed -i *": "ask",
       "sed --in-place *": "ask",
       "perl -i *": "ask",
       "perl -pi *": "ask",
-
       "kill *": "ask",
       "kill * -9 *": "deny",
       "pkill *": "ask",
       "killall *": "ask",
-
       "halt *": "deny",
       "poweroff *": "deny",
       "reboot *": "deny",
       "shutdown *": "deny",
       "systemctl *": "ask",
-
       "curl * | *": "deny",
       "wget * | *": "deny",
-
       "kubectl delete *": "deny",
       "terraform destroy *": "deny",
       "aws s3 rm * --recursive *": "deny",
       "gcloud * delete *": "deny",
-
       "xdg-open 'http://127.0.0.1:*/*'": "allow",
       "xdg-open 'http://localhost:*/*'": "allow",
       "xdg-open 'https://github.com/*'": "allow"
