@@ -20,6 +20,7 @@
       "~/.ssh/*": "deny"
     },
     "read": {
+      "*": "allow",
       "/below-here-is-not-yet-confirmed": "deny"
     },
     "write": {
