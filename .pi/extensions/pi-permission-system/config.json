@@ -4,7 +4,8 @@
     "path": {
       "*": "allow",
       "auth.json": "deny",
-      "sessions/*": "deny"
+      "sessions/*": "deny",
+      "/below-here-is-not-yet-confirmed": "deny"
     },
     "write": {
       "*": "allow",
@@ -25,7 +26,11 @@
         "action": "deny",
         "reason": "Pi sessions must not be altered by an LLM but by the harness."
       },
-      "themes/*": "allow"
+      "themes/*": "allow",
+      "/below-here-is-not-yet-confirmed": "deny"
+    },
+    "bash": {
+      "/below-here-is-not-yet-confirmed": "deny"
     },
     "external_directory": {
       "/home/deck/git/amosblomqvist/pi-config/*": "allow",

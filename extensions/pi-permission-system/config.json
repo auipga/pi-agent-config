@@ -19,6 +19,9 @@
       },
       "~/.ssh/*": "deny"
     },
+    "read": {
+      "/below-here-is-not-yet-confirmed": "deny"
+    },
     "write": {
       "*": "ask",
       ".git/*": "deny",
