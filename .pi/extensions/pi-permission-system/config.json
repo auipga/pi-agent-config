@@ -34,6 +34,7 @@
       "/below-here-is-not-yet-confirmed": "deny"
     },
     "external_directory": {
+      "/home/deck/git/*": "deny",
       "/home/deck/git/amosblomqvist/pi-config/*": "allow",
       "/home/deck/git/amosblomqvist/pi-subagents/*": "allow",
       "/home/deck/git/badlogic/pi-skills/*": "allow",
