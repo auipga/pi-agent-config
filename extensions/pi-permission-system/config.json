@@ -109,7 +109,7 @@
       "xdg-open 'https://github.com/*'": "allow"
     },
     "external_directory": {
-      "*": "ask",
+      "*": "deny",
       "/home/deck/git/amosblomqvist/pi-subagents/agents/*": "allow",
       "/home/deck/git/benithors/skills/skills/*": "allow",
       "/home/deck/git/mattpocock/skills/skills/*": "allow",
