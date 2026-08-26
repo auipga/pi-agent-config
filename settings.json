@@ -230,6 +230,7 @@
     "../../git/tmustier/pi-extensions/session-recap/index.ts",
     "-extensions/manual-context-guard.ts",
     "+extensions/extension-header.ts",
+    "+extensions/llama-footer.ts",
     "-extensions/gnome-system-theme.ts"
   ],
   "themes": [
