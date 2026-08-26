@@ -2,7 +2,7 @@
 
 ## Next-session focus
 
-Continue the final specification for a Pi extension that displays live llama-server status and inference statistics in Pi's footer. Do not implement yet unless explicitly requested. The user's latest instruction was: `the final spec using no other skill than handoff`.
+Continue the final specification for a Pi extension that displays live llama-server status and inference statistics in Pi's footer. Do not implement yet unless explicitly requested. The user's latest instruction was: `implement using no other skill than explicitely called for`.
 
 ## Current project/context
 
@@ -14,13 +14,13 @@ Continue the final specification for a Pi extension that displays live llama-ser
 
 ## Data-source decision
 
-Use llama-server HTTP monitoring endpoints rather than attempting to read another process's stdout.
+Use llama-server HTTP monitoring endpoints.
 
-- `/slots`: live slot state, prompt totals, cached/processed prompt counts, context size, generation counts; enabled by default unless disabled with `--no-slots`.
+- `/slots`: live slot state, prompt totals, cached/processed prompt counts, context size, generation counts.
 - `/props`: model/server readiness and configuration.
-- `/metrics`: optional Prometheus metrics and queue/deferred-request information; requires starting llama-server with `--metrics` and therefore a restart. The current local router was observed without this flag, so the extension must work without it.
+- `/metrics`: optional Prometheus metrics and queue/deferred-request information; requires starting llama-server with `--metrics`. Try to note rely on it, so the extension can work without it. Discuss with me if required.
 - In router mode, monitoring endpoints need the selected model query parameter.
-- The current local llama-server setup is a router on localhost port 9931; do not copy any API key from the conversation into documentation or code.
+- The current local llama-server setup is a router on localhost port 9931; do not copy any API key from the conversation into documentation or code (discuss alternatives)
 
 Live prompt speed can be calculated by sampling changes in `n_prompt_tokens_processed`. `/metrics` may be used when available, with `/slots` as the fallback. Model-loading progress should use the router's model status/SSE progress where available.
 
@@ -29,8 +29,8 @@ Live prompt speed can be calculated by sampling changes in `n_prompt_tokens_proc
 - **C1-M**: model state icon.
 - **C1-P**: prompt-processing state icon.
 - **C1-G**: generation state icon.
-- **C2**: queue/deferred-request indicator and mandatory waiting timer.
-- **C3**: context-utilization bar and values; always visible whenever the server is ready.
+- **C2**: context-utilization bar and values; always visible whenever the server is ready.
+- **C3**: queue/deferred-request indicator and mandatory waiting timer.
 - **C4**: active prompt/generation display container.
 - **C5**: previously cached/reused prompt segment.
 - **C6**: prompt tokens processed during the current turn / active current-turn segment.
@@ -54,14 +54,14 @@ Use A1 unless the user changes this choice.
 When ready, the order is:
 
 ```text
-C1-M │ C3 │ C2 │ ...
+C1-M │ C2 │ C3 │ ...
 ```
 
-C2 is positioned after C3.
+C3 is positioned after C2.
 
 ### Loading
 
-Only C1-M and C11 are shown. No C2-C10 components:
+Only C1-M and C11 are shown. No C3-C10 components:
 
 ```text
 ⠋ │ Model [███▍░░░░░░] 38%
@@ -71,17 +71,17 @@ C1-M uses the one-character spinner while the model loads and becomes A1 when re
 
 ### Ready and idle
 
-C1-M is A1 and C3 is always visible. C2 is hidden if this request was never queued:
+C1-M is A1 and C2 is always visible. C3 is hidden if this request was never queued:
 
 ```text
 ✓ │ Ctx [███████░░░] 23.4k/32.8k
 ```
 
-No special alternate layout is used near the context limit; C3 keeps the same format.
+No special alternate layout is used near the context limit; C2 keeps the same format.
 
 ### Waiting in the queue
 
-The waiting timer is mandatory. C2 is shown before Prompt-C4 appears, using the live queue count and elapsed waiting time:
+The waiting timer is mandatory. C3 is shown before Prompt-C4 appears, using the live queue count and elapsed waiting time:
 
 ```text
 ✓ │ Ctx [███████░░░] 23.4k/32.8k │ 󰇚2 ⏱ 4s
@@ -94,16 +94,16 @@ The count represents waiting requests, not tokens. The timer starts when the req
 C1-P is the spinner while this stage is active. C1-M remains A1 because the model is ready:
 
 ```text
-✓ │ Ctx [███████░░░] 23.4k/32.8k │ 󰇚2 ⏱ 4s │ ⠋ Prompt [▒▒▒▒▒██▊░░] ⏱ 5s 4.7k/17.1k left 72% │ PP 142 t/s
+✓ │ Ctx [███████░░░] 23.4k/32.8k │ 󰇚2 ⏱ 4s │ ⠋ PP [▒▒▒▒▒██▊░░] ⏱ 5s 4.7k/17.1k left 72% │ 142 t/s
 ```
 
 C4 contains C5+C6+C7+C8, and C9 is the live prompt speed:
 
 ```text
-C1-M │ C3 │ C2 │ C1-P + C4(C5+C6+C7+C8) │ C9
+C1-M │ C2 │ C3 │ C1-P + C4(C5+C6+C7+C8) │ C9
 ```
 
-Bar styles must be distinguishable without relying solely on color:
+Bar styles must be distinguishable without relying solely on color: (this might become subject to change)
 
 ```text
 C5 cached:       ▒▒▒▒▒   muted/shaded style
@@ -119,62 +119,57 @@ Fractional glyphs may be used for smoother boundaries:
 
 ### Prompt complete, generation active
 
-C8 collapses to a prompt summary between C3 and Generation-C4. Its stopwatch icon becomes A1 and the label `Prompt` is added:
+C8 collapses to a prompt summary between C2 and Generation-C4. Its stopwatch icon becomes A1 and the label `PP` is added:
 
 ```text
-✓ │ Ctx [████████░░] 27.1k/32.8k │ 󰇚2 ⏱ 4s │ ✓ Prompt 30s for 4.5k ≈ 150 t/s │ ⠋ Generation ⏱ 5s 100t ≈ 20 t/s
+✓ │ Ctx [████████░░] 27.1k/32.8k │ 󰇚2 ⏱ 4s │ ✓ PP 30s for 4.5k ≈ 150 t/s │ ⠋ TG ⏱ 5s 100t ≈ 20 t/s
 ```
 
 The prompt summary has the form:
 
 ```text
-✓ Prompt 30s for 4.5k ≈ 150 t/s
+✓ PP 30s for 4.5k ≈ 150 t/s
 ```
 
 C1-G is the spinner while generation is active.
 
-The earlier idea that Generation-C4 should contain only C6/bar content was superseded by the later correction. Generation-C4 must instead be the full text form:
-
 ```text
-Generation ⏱ 5s 100t ≈ 20 t/s
+TG ⏱ 5s 100t ≈ 20 t/s
 ```
 
 It does not contain C5, C7, or C8.
 
 ### Generation complete
 
-C1-G changes from the spinner to A1. The generation summary uses the same structure as the completed prompt summary, with the `Generation` label:
+C1-G changes from the spinner to A1. The generation summary uses the same structure as the completed prompt summary, with the `TG` label:
 
 ```text
-✓ │ Ctx [████████░░] 27.1k/32.8k │ 󰇚2 ⏱ 4s │ ✓ Prompt 30s for 4.5k ≈ 150 t/s │ ✓ Generation 5s for 100t ≈ 20 t/s
+✓ │ Ctx [████████░░] 27.1k/32.8k │ 󰇚2 ⏱ 4s │ ✓ PP 30s for 4.5k ≈ 150 t/s │ ✓ TG 5s for 100t ≈ 20 t/s
 ```
 
-Use the Unicode approximation symbol `≈` everywhere; never use `^=`.
-
-## C2 lifecycle
+## C3 lifecycle
 
 - Hidden if the current request was never queued.
 - Live/full styling while the request is waiting:
   ```text
   󰇚2 ⏱ 4s
   ```
-- Once the live waiting count reaches zero and the request receives a slot, retain C2 rather than removing it.
-- The retained C2 is fully rendered but muted and preserves the original count plus final waiting duration:
+- Once the live waiting count reaches zero and the request receives a slot, retain C3 rather than removing it.
+- The retained C3 is fully rendered but muted and preserves the original count plus final waiting duration:
   ```text
-  󰇚2 ⏱ 4s
+  󰇚2 in 4s
   ```
-- Do not show a waiting end timestamp.
-- On the next user message, clear C2 and every component to its right immediately before that message could be queued. C1-M and C3 persist.
-- If the new request queues, create a new live C2 with a reset timer. If it starts immediately, C2 remains hidden.
+- On the next user message, clear C3 and every component to its right immediately before that message could be queued. C1-M and C2 persist.
+- If the new request queues, create a new live C3 with a reset timer. If it starts immediately, C3 remains hidden.
 
 ## Context/prompt semantics
 
-- C3 answers: how full is the entire model context/KV window?
+- C2 answers: how full is the entire model context/KV window?
 - C4 answers: how far through the current prompt evaluation are we?
-- C3 remains visible whenever the server is ready, with no special near-limit mode.
+- C2 remains visible whenever the server is ready, with no special near-limit mode.
 - During prompt processing, C4's colored bar shows reused prompt tokens, newly evaluated tokens, and remaining prompt tokens.
 - After prompt processing, C4 is replaced by the C8 prompt summary; Generation-C4 then reports generation timing/count/speed.
 
 ## Suggested skills
 
-No skill other than `handoff` is requested for the next session. Do not invoke implementation, TDD, research, code-review, or other skills unless the user explicitly changes the request.
+Do not invoke any skills unless the user explicitly changes the request.
