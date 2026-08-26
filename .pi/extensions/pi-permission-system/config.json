@@ -30,6 +30,7 @@
       "/below-here-is-not-yet-confirmed": "deny"
     },
     "bash": {
+      "git -C *": "allow",
       "/below-here-is-not-yet-confirmed": "deny"
     },
     "external_directory": {
