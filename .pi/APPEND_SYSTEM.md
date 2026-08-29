@@ -4,9 +4,7 @@ This project lives at `~/git/me/pi-agent-config` and is symlinked to `~/.pi/agen
 
 ## External dependencies
 
-All listed repos are cloned into `~/git/<org>/<repo>/` using a custom zsh `clone` helper function.
-Example: `~/git/mattpocock/skills/`.
-Look into the local checkouts when answering questions about them.
+Listed repos are cloned into `~/git/<org>/<repo>/`:
 
   - https://github.com/amosblomqvist/pi-config
   - https://github.com/badlogic/pi-skills
@@ -16,7 +14,11 @@ Look into the local checkouts when answering questions about them.
   - https://github.com/mattpocock/skills
   - https://github.com/tmustier/pi-extensions
 
-## Agent skills
+Look into those local checkouts when answering questions about them.
+
+Example: https://github.com/mattpocock/skills is cloned into `~/git/mattpocock/skills/`.
+
+## Matt Pocock's skills
 
 ### Issue tracker
 

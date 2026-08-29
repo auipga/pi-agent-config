@@ -1,6 +1,7 @@
 ---
 name: update-pi
 description: Update Pi Coding Agent (customized instructions)
+disable-model-invocation: true
 tools: read, grep, find, ls, bash
 model: openai/gpt-5.6-luna
 thinking: low

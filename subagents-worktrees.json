@@ -1,6 +1,10 @@
 {
   "worktreeAgents": [
     "general-purpose",
+    "worker",
+    "implement",
+    "prototype",
+    "tdd",
     "refactorer"
   ]
 }

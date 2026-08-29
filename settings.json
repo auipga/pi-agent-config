@@ -1,5 +1,14 @@
 {
   "lastChangelogVersion": "0.84.4",
+  "defaultTools": [
+    "read",
+    "bash",
+    "edit",
+    "write",
+    "grep",
+    "find",
+    "ls"
+  ],
   "defaultProvider": "openai",
   "defaultModel": "gpt-5.6-luna",
   "defaultThinkingLevel": "low",
@@ -154,6 +163,7 @@
         "-index.ts"
       ]
     },
+    "npm:@woxqaq/pi-web",
     "npm:pi-wakatime"
   ],
   "terminal": {
@@ -227,7 +237,7 @@
     "../../git/tmustier/pi-extensions/usage-extension/index.ts",
     "../../git/tmustier/pi-extensions/raw-paste/index.ts",
     "../../git/tmustier/pi-extensions/code-actions/index.ts",
-    "../../git/tmustier/pi-extensions/session-recap/index.ts",
+    "-../../git/tmustier/pi-extensions/session-recap/index.ts",
     "-extensions/manual-context-guard.ts",
     "+extensions/extension-header.ts",
     "+extensions/llama-footer.ts",

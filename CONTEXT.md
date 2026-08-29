@@ -18,6 +18,8 @@ Top-level layout:
   - `update-pi.md` special update procedure for Pi.
 - `skills/`: my own skills.
   - `rtfm/`
+  - `update-pi/`
+  - `nixos-config`
 - `themes/`: theme definitions.
   - `catppuccin-mocha.json`
 - `docs/agents/`: repo guidance for agent workflows.

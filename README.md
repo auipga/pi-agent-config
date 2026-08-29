@@ -12,15 +12,4 @@ To run this configuration:
 - symlink `~/.pi/agent` to `~/git/<owner>/pi-agent-config`
 
 *) I like to fetch updates at times so the "copy it over into your repo approach" doesn't fit my need.
-
-## Notes / Gotchas
-
-- `settings.json` lists paths to files (packages, extension, skills, prompts, themes).
- 
-  The path notation uses `+`, `-` or no prefix to hold its enabled state depending on whether the path is inside (autoloaded) or outside (only when explicitly referenced) of Pi's config dir.
-
-  | Enabled | Disabled | Not listed |
-  | --- | --- | --- |
-  | `+subfolder/file.js` | `-subfolder/file.js` | enabled by autoloading |
-  | `../../path/file.js` | `-../../path/file.js` (doesn't even show up in `pi config`) | unknown / disabled |
-
+*) I use a zsh `clone` [helper function](https://github.com/auipga/nixos-config/blob/master/home-manager/modules/coding/git.nix#L31-L82) that takes an URL and does the rest.

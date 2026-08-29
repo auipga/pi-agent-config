@@ -1,0 +1,4 @@
+- User wants a stateful course for an agent implementing an MCP server to configure Valve Steam Input via chat.
+- User explicitly requested online documentation research and warned not to assume.
+- Mission initialized 2025-02-14. No prior learning records yet.
+- Important research boundary: Valve docs document the model and game API, but do not establish a supported external API for arbitrary player layout edits.
